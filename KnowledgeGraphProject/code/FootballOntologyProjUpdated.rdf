@@ -1,0 +1,1897 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology/"
+     xml:base="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:FootballOntologyProj="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj">
+        <owl:imports rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:comment>This ontology is represents the football domain; plays , clubs, competitions and others.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#duration"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#CurrentClub -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#CurrentClub">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#appearIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#appearIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Appearance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#assistsGoal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#assistsGoal">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#involvedIn"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAssist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#awayClub -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#awayClub">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#belongsTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasCard"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Card"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#cityOfBirth -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#cityOfBirth">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#countryOfBirth -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#countryOfBirth">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#countryOfCitizenship -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#countryOfCitizenship">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#domesticLeague -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#domesticLeague">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#happenedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#happenedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAGame">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#inACompetition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAReferee -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAReferee">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#officiates"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAssist -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAssist">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Goal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasCard -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasCard">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#involvedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Card"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasCountry -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasCountry">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <rdfs:range rdf:resource="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasDomesticCompetition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasDomesticCompetition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasGoalKeeper -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasGoalKeeper">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasPlayer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasInjury -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasInjury">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasPlayer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasPlayer">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playsFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasScorer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasScorer">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#scoredGoal"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Goal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSeverity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSeverity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSpecialSkill -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSpecialSkill">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasValuation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasValuation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#isValuationOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Valuation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#higherPenalty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#higherPenalty">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#lessPenalty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Card"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Card"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#homeClub -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#homeClub">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#inACompetition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#inACompetition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#involvedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#involvedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#isValuationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#isValuationOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#lessPenalty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#lessPenalty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#lessSerious -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#lessSerious">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#moreSerious"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#moreSerious -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#moreSerious">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#officiates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#officiates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#participatesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#participatesIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#ClubGame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playerIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playerIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Substitution"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playerOut -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playerOut">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Substitution"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playsFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playsFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#scoredGoal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#scoredGoal">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#involvedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#supervises -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#supervises">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#averageAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#averageAge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#awayClubGoals -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#awayClubGoals">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#awayClubPosition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#awayClubPosition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#cityName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#cityName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#clubCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#clubCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#clubName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#clubName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionSubType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionSubType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competitionType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#confederation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#confederation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#date">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Appearance"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Valuation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#dateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#dateTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Valuation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#dateWeek -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#dateWeek">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Valuation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#foreignersNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#foreignersNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#foreignersPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#foreignersPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#gameId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#gameId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasDescription">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasDuration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasExperience -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasExperience">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasJerseyNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasJerseyNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasTotalMatches -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasTotalMatches">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#heightInCM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#heightInCM">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#homeClubGoals -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#homeClubGoals">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#homeClubPosition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#homeClubPosition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hosting -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hosting">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#ClubGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#lastSeason -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#lastSeason">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#marketValueInEur -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#marketValueInEur">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Valuation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#minute -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#minute">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#numberOfNationalTeamPlayes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#numberOfNationalTeamPlayes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#opponentManagerName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#opponentManagerName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#ClubGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#opponentPosition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#opponentPosition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#ClubGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#ownManagerName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#ownManagerName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#ClubGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playerCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playerCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#redCardNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#redCardNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Appearance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#redCardsNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#redCardsNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Appearance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#round -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#round">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#season -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#season">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#squadSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#squadSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#totalMarketValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#totalMarketValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#yellowCardsNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#yellowCardsNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Appearance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Appearance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Appearance">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#redCardNumber"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#yellowCardsNumber"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#City"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#ClubGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#ClubGame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAGame"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#confederation"/>
+                <owl:hasValue>europa</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAReferee"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Goal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Goal">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasScorer"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasAssist"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Substitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Substitution">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playerIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playerOut"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Valuation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Valuation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#AttackingSkills -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#AttackingSkills">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Card -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Card">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#RedCard"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#YellowCard"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Defender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Defender">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSpecialSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#DefensiveSkills"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#DefensiveSkills -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#DefensiveSkills">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Forward -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Forward">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSpecialSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#AttackingSkills"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalKeeper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalKeeper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSpecialSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalkeepingSkills"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalkeepingSkills -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalkeepingSkills">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#InjuredPlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#InjuredPlayer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasInjury"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#MentalSkills -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#MentalSkills">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Midfielder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Midfielder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSpecialSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#TacticalSkills"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSpecialSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#TechnicalSkills"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#MildInjury -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#MildInjury">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSeverity"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Mild"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#ModerateInjury -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#ModerateInjury">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSeverity"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Moderate"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#NegativeDrawGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#NegativeDrawGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#awayClubGoals"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#homeClubGoals"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#PhysicalSkills -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#PhysicalSkills">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#playsFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSpecialSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#RetiredPlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#RetiredPlayer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#SevereInjury -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#SevereInjury">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#hasSeverity"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severe"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Mild"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Moderate"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severe"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#TacticalSkills -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#TacticalSkills">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#TechnicalSkills -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#TechnicalSkills">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#ArmDisplacement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#ArmDisplacement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+        <FootballOntologyProj:hasSeverity rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Moderate"/>
+        <FootballOntologyProj:moreSerious rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#muscleCramp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Attack1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Attack1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Forward"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#BrokenKnee -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#BrokenKnee">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+        <FootballOntologyProj:hasSeverity rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severe"/>
+        <FootballOntologyProj:moreSerious rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#ArmDisplacement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#CompetitionWithoutConfederation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#CompetitionWithoutConfederation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Dede -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Dede">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Defender"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Defender -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Defender"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Forward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Forward"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalKeeper -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalKeeper"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalKeeping1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalKeeping1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalKeeper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Midfielder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Midfielder"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Mild -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Mild">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Miroslav_Klose -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Miroslav_Klose">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Forward"/>
+        <FootballOntologyProj:cityOfBirth rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#opoleCity"/>
+        <FootballOntologyProj:countryOfBirth rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries#pl"/>
+        <FootballOntologyProj:countryOfCitizenship rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries#de"/>
+        <FootballOntologyProj:heightInCM rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">198</FootballOntologyProj:heightInCM>
+        <FootballOntologyProj:lastSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2015</FootballOntologyProj:lastSeason>
+        <FootballOntologyProj:marketValueInEur rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000000</FootballOntologyProj:marketValueInEur>
+        <FootballOntologyProj:playerCode>Miroslav_Klose</FootballOntologyProj:playerCode>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1978-06-09</foaf:birthday>
+        <foaf:firstName xml:lang="en">Miroslav</foaf:firstName>
+        <foaf:lastName xml:lang="en">Klose</foaf:lastName>
+        <foaf:name xml:lang="en">Miroslav Klose</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Moderate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Moderate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severity"/>
+        <FootballOntologyProj:moreSerious rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Mild"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player2WithEvent1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player2WithEvent1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <FootballOntologyProj:assistsGoal rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#event1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#PlayerWithEvent1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#PlayerWithEvent1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <FootballOntologyProj:involvedIn rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#event1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#RedCard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#RedCard">
+        <FootballOntologyProj:higherPenalty rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#YellowCard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Severity"/>
+        <FootballOntologyProj:moreSerious rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Moderate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#YellowCard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#YellowCard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Card"/>
+        <FootballOntologyProj:minute rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</FootballOntologyProj:minute>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#a1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#a1">
+        <FootballOntologyProj:redCardNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</FootballOntologyProj:redCardNumber>
+        <FootballOntologyProj:yellowCardsNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</FootballOntologyProj:yellowCardsNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#appearance1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#appearance1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Appearance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <FootballOntologyProj:clubName>atromitos-athen</FootballOntologyProj:clubName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <FootballOntologyProj:clubName>veria-nps</FootballOntologyProj:clubName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <FootballOntologyProj:clubName>AS_Roma</FootballOntologyProj:clubName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <FootballOntologyProj:clubName>SSC Napoli</FootballOntologyProj:clubName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <FootballOntologyProj:clubName>Genoa CFC</FootballOntologyProj:clubName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <FootballOntologyProj:clubName>SS Lazio</FootballOntologyProj:clubName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <FootballOntologyProj:clubName>Córdoba CF</FootballOntologyProj:clubName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club8">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+        <FootballOntologyProj:clubName>RCD Espanyol Barcelona</FootballOntologyProj:clubName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <FootballOntologyProj:domesticLeague rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition3"/>
+        <FootballOntologyProj:hasCountry rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries#it"/>
+        <FootballOntologyProj:competitionCode>italy-cup</FootballOntologyProj:competitionCode>
+        <FootballOntologyProj:competitionId>CIT</FootballOntologyProj:competitionId>
+        <FootballOntologyProj:competitionName>italy-club</FootballOntologyProj:competitionName>
+        <FootballOntologyProj:competitionSubType>domestic_cup</FootballOntologyProj:competitionSubType>
+        <FootballOntologyProj:competitionType>domestic_cup</FootballOntologyProj:competitionType>
+        <FootballOntologyProj:confederation>europa</FootballOntologyProj:confederation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <FootballOntologyProj:domesticLeague rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition2"/>
+        <FootballOntologyProj:hasCountry rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries#es"/>
+        <FootballOntologyProj:competitionCode>laliga</FootballOntologyProj:competitionCode>
+        <FootballOntologyProj:competitionName>laliga</FootballOntologyProj:competitionName>
+        <FootballOntologyProj:competitionSubType>first_tier</FootballOntologyProj:competitionSubType>
+        <FootballOntologyProj:competitionType>domestic_league</FootballOntologyProj:competitionType>
+        <FootballOntologyProj:confederation>europa</FootballOntologyProj:confederation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <FootballOntologyProj:domesticLeague rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition3"/>
+        <FootballOntologyProj:hasCountry rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries#it"/>
+        <FootballOntologyProj:competitionCode>serie-a</FootballOntologyProj:competitionCode>
+        <FootballOntologyProj:competitionName>serie-a</FootballOntologyProj:competitionName>
+        <FootballOntologyProj:competitionSubType>first_tier</FootballOntologyProj:competitionSubType>
+        <FootballOntologyProj:competitionType>domestic_league</FootballOntologyProj:competitionType>
+        <FootballOntologyProj:confederation>europa</FootballOntologyProj:confederation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <FootballOntologyProj:domesticLeague rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition4"/>
+        <FootballOntologyProj:hasAGame rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game1"/>
+        <FootballOntologyProj:hasCountry rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries#gb"/>
+        <FootballOntologyProj:competitionCode>premier-league</FootballOntologyProj:competitionCode>
+        <FootballOntologyProj:competitionName>premier-league</FootballOntologyProj:competitionName>
+        <FootballOntologyProj:competitionSubType>first_tier</FootballOntologyProj:competitionSubType>
+        <FootballOntologyProj:competitionType>domestic_league</FootballOntologyProj:competitionType>
+        <FootballOntologyProj:confederation>europa</FootballOntologyProj:confederation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+        <FootballOntologyProj:domesticLeague rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition5"/>
+        <FootballOntologyProj:hasCountry rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries#de"/>
+        <FootballOntologyProj:competitionCode>bundesliga</FootballOntologyProj:competitionCode>
+        <FootballOntologyProj:competitionName>bundesliga</FootballOntologyProj:competitionName>
+        <FootballOntologyProj:competitionSubType>first_tier</FootballOntologyProj:competitionSubType>
+        <FootballOntologyProj:competitionType>domestic_league</FootballOntologyProj:competitionType>
+        <FootballOntologyProj:confederation>europa</FootballOntologyProj:confederation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#defend1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#defend1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Defender"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#event1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#event1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+        <FootballOntologyProj:hasScorer rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#PlayerWithEvent1"/>
+        <FootballOntologyProj:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-08-05</FootballOntologyProj:date>
+        <FootballOntologyProj:description>Right-footed shot</FootballOntologyProj:description>
+        <FootballOntologyProj:minute rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53</FootballOntologyProj:minute>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <FootballOntologyProj:awayClub rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club2"/>
+        <FootballOntologyProj:homeClub rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club1"/>
+        <FootballOntologyProj:awayClubGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</FootballOntologyProj:awayClubGoals>
+        <FootballOntologyProj:awayClubGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</FootballOntologyProj:awayClubGoals>
+        <FootballOntologyProj:awayClubPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</FootballOntologyProj:awayClubPosition>
+        <FootballOntologyProj:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-02-09</FootballOntologyProj:date>
+        <FootballOntologyProj:homeClubGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</FootballOntologyProj:homeClubGoals>
+        <FootballOntologyProj:homeClubPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</FootballOntologyProj:homeClubPosition>
+        <FootballOntologyProj:round>21 Matchday</FootballOntologyProj:round>
+        <FootballOntologyProj:season rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2012</FootballOntologyProj:season>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <FootballOntologyProj:awayClub rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club4"/>
+        <FootballOntologyProj:homeClub rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club3"/>
+        <FootballOntologyProj:inACompetition rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition1"/>
+        <FootballOntologyProj:awayClubPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</FootballOntologyProj:awayClubPosition>
+        <FootballOntologyProj:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-05</FootballOntologyProj:date>
+        <FootballOntologyProj:homeClubGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</FootballOntologyProj:homeClubGoals>
+        <FootballOntologyProj:round>semi-finals</FootballOntologyProj:round>
+        <FootballOntologyProj:season rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2013</FootballOntologyProj:season>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <FootballOntologyProj:awayClub rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club6"/>
+        <FootballOntologyProj:homeClub rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club5"/>
+        <FootballOntologyProj:inACompetition rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition3"/>
+        <FootballOntologyProj:awayClubGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</FootballOntologyProj:awayClubGoals>
+        <FootballOntologyProj:awayClubPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</FootballOntologyProj:awayClubPosition>
+        <FootballOntologyProj:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-09-21</FootballOntologyProj:date>
+        <FootballOntologyProj:homeClubGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</FootballOntologyProj:homeClubGoals>
+        <FootballOntologyProj:homeClubPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</FootballOntologyProj:homeClubPosition>
+        <FootballOntologyProj:round>3. Matchday</FootballOntologyProj:round>
+        <FootballOntologyProj:season rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2014</FootballOntologyProj:season>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+        <FootballOntologyProj:awayClub rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club8"/>
+        <FootballOntologyProj:homeClub rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#club7"/>
+        <FootballOntologyProj:inACompetition rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#competition2"/>
+        <FootballOntologyProj:awayClubGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</FootballOntologyProj:awayClubGoals>
+        <FootballOntologyProj:awayClubPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</FootballOntologyProj:awayClubPosition>
+        <FootballOntologyProj:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-09-28</FootballOntologyProj:date>
+        <FootballOntologyProj:homeClubGoals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</FootballOntologyProj:homeClubGoals>
+        <FootballOntologyProj:homeClubPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</FootballOntologyProj:homeClubPosition>
+        <FootballOntologyProj:round>6. Matchday</FootballOntologyProj:round>
+        <FootballOntologyProj:season rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2014</FootballOntologyProj:season>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#gameWithYellowCard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#gameWithYellowCard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#messi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#messi">
+        <FootballOntologyProj:hasSpecialSkill rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Attack1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#muscleCramp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#muscleCramp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Injury"/>
+        <FootballOntologyProj:hasSeverity rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Mild"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#opoleCity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#opoleCity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#City"/>
+        <FootballOntologyProj:cityName>Opole</FootballOntologyProj:cityName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#p1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#p1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#p2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#p2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#referee1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#referee1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+        <FootballOntologyProj:officiates rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game2"/>
+        <foaf:name>Mauro Bergonzi</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#referee2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#referee2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+        <FootballOntologyProj:officiates rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game3"/>
+        <foaf:name>Marco Guida</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#referee3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#referee3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Referee"/>
+        <FootballOntologyProj:officiates rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#game4"/>
+        <foaf:name>Santiago Jaime Latre</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#retired1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#retired1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</foaf:age>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#retired2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#retired2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Player"/>
+        <FootballOntologyProj:hasInjury rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#BrokenKnee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#s1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#s1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Substitution"/>
+        <FootballOntologyProj:playerIn rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#p1"/>
+        <FootballOntologyProj:playerIn rdf:resource="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#p2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Appearance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#City"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Club"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Competition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Game"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#GameEvent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Valuation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Goal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntology#Substitution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Card"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Defender"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Forward"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#GoalKeeper"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tamim/ontologies/2023/10/FootballOntologyProj#Midfielder"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
