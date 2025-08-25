@@ -1,0 +1,20 @@
+\subsection{REST Error Codes}
+The list of the rest API for this homework is still “in progress” because we have to decide according to the
+front-end whether is better to use a REST call or not. The list of errors is defined in the application. Application-specific errors have the application error which follows a progressive numeration starting from -100. METHOD
+NOT ALLOWED errors are identified with the error code -500. Internal errors, which correspond to crashes, servlet
+exceptions, or problems with the input/output streams are identified with the Error Code -999.
+
+ \begin{longtable}{|p{.15\columnwidth}|p{.3\columnwidth} |p{.5\columnwidth}|} 
+ \hline
+ \textbf{Error Code} & \textbf{HTTP Status Code} & \textbf{Description} \\\hline
+ -100 & BAD\_REQUEST            & Wrong format of the request. \\ \hline
+ -404 & NOT\_FOUND              & When the customer not found. \\ \hline
+ -102 & BAD\_REQUEST            & The customer tried to register without specifying all the details. Used also with forms that need to be fully filled. \\ \hline
+ -103 & BAD\_REQUEST            & The customer tried to login without specifying the Email. \\ \hline
+ -104 & BAD\_REQUEST            & The customer tried to login without specifying the password. \\ \hline
+ -400 & BAD\_REQUEST            & User submitted wrong credentials in the login form. \\ \hline
+ -120 & BAD\_REQUEST            & The input json is in the wrong format. \\ \hline
+ -200 & BAD\_REQUEST            & Operation unknown. \\ \hline
+ -500 & METHOD\_NOT\_ALLOWED    & The method is not allowed. \\ \hline
+
+ \end{longtable}
