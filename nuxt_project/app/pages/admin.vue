@@ -1,0 +1,17 @@
+<script setup lang="ts">
+const user = useCookie("user");
+
+definePageMeta({
+  middleware: ["admin"],
+});
+</script>
+
+<template>
+  <main>
+    <section class="container py-20">
+      <h1 class="text-3xl mb-6 text-balance">
+        Welcome back, {{ userInfo.name }}
+      </h1>
+    </section>
+  </main>
+</template>

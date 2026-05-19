@@ -1,0 +1,36 @@
+\section{Main Functionalities}
+
+The web application is used mainly to allow users to interact with products available in the clothes shop, permitting the 
+visualization, consultation and the purchase.
+Furthermore, the web interface allows to integrate the catalog of product with newer one, but the functionality is restricted to admin users.
+The website is substantially divided into four main areas:
+\begin{itemize}
+    \item  public area: available to unregistered users and registered users with the “base” role. This area, which also corresponds to the homepage/landing page contains the list of parks for which the amusement ride builder worked for and the list of rides built in each park.
+    \item maintenance area: this area includes three main subpages:
+    \begin{itemize}
+        \item inserting and editing maintenance events: used by maintainers to insert or edit maintenance events
+        \item searching for maintenance events: used to filter through maintenance events and show relevant ones
+        \item inserting new measurement files: such files are uploaded via web interface and processed offline.
+    \end{itemize}
+    \item builder area: the builder area allows to:
+    \begin{itemize}
+        \item insert new parks and edit existing ones. to be used when rides have not been deployed before on such park
+        \item insert new models and edit existing ones: used when the fictitious builder develops a new model
+        \item insert new rides and edit existing ones.
+    \end{itemize}
+    \item administration area: the administration area is accessible only to users with the role “admin”. It contains functionalities to operate over the users in the system. In particular, in this area is possible to:
+    \begin{itemize}
+        \item search users via email
+        \item retrieve information on a specific user based on its email
+        \item modify the user record by changing their first name, last name and role
+    \end{itemize}
+\end{itemize}
+
+
+Roles can be sorted according to the privileges they grant. In particular, admin $>$ builder $>$ maintainer $>$ base users. This means that a user can access all the areas of the web-site granted by their and lower roles.\\
+
+The site has an accessory area which allows every user to either register or login to the application.
+Note that, if the registration is completed successfully the user should be notified via email.
+
+
+

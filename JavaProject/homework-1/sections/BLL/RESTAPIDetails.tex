@@ -1,0 +1,150 @@
+\subsection{REST API DETAILS}
+
+We have different resource types that our web application handles during its functioning.
+There are two main actors 
+1. Admin
+2. Customer
+
+\noindent\textbf{Homepage content}\\
+The homepage contains an aggregation of several pieces of information. In particular, it contains the
+full list of clothes in the database. It will divide on the bases of gender like male, female as well as kids. Customers can view the brands, and select on the bases of their choice. Customers can also register to get up to date on the new arrival. 
+
+\begin{itemize}
+    \item URL: \texttt{Homepage/overview/}
+    \item Method: \texttt{GET}
+    \item URL Parameters: No parameters are required in the url
+    \item Data Parameters: No data passed
+    \item Success Response:\\
+    Upon success, the servlet returns a JSON object with the required information.
+
+    \item Error Response:\\
+    Code: 500 INTERNAL\_SERVER\_ERROR\\
+    Content: \texttt{\{``error'': \{``code'': -999, ``message'' : ``Internal Error.''\}}\\
+    When: if there is a \texttt{SQLException} or a \texttt{NamingException}, this error is return
+\end{itemize}
+
+
+\noindent\textbf{Signup Page}\\
+The following endpoint allows inserting a new Customer into the database.
+
+\begin{itemize}
+    \item URL: \texttt{wave/homepage/signup/}
+    \item Method: \texttt{POST}
+    \item URL Parameters: No parameters are required in the url
+    \item Data Parameters:
+    
+    Required:
+    
+    \begin{itemize}
+        \item \texttt{name = \{string\}}: The name of the customer needed to insert and it will store in our database.
+        \item \texttt{email = \{string\}}: The email of the customer needed to insert and it will store in our database.
+        \item \texttt{password = \{password\}}: The password of the customer needed to insert and then we will retype it for confirmation (we didn't put retype password section in the mockup but it will be in the website once we start implementing) and it will also store in our database.
+        \item \texttt{phone no = \{number\}}: Phone number will also store in our db.
+        \item \texttt{address = \{string\}}: The address of the customer will also store in our database.
+    \end{itemize}
+    
+    
+    \item Success Response:\\
+
+    Code: 200\\
+    Content: \texttt{\{data: \{'Successfully register!' \}\}}
+
+    \item Error Response:\\
+    Code: 404 NOT\_FOUND\\
+    Content: \texttt{\{``error'': \{``code'': -101, ``message'' : ``Customer already registered.''\}}\\
+    When: When the customer is already found in the database.\\
+    
+    Code: 400 BAD\_REQUEST\\
+    Content: \texttt{\{``error'': \{``code'': -120, ``message'' : ``The input json is in the wrong format.''\}}\\
+    When: The user has passed in the data payload a json ill-formatted or without all the required fields.\\
+
+\end{itemize}
+
+
+
+\noindent\textbf{Sign In}\\
+The following endpoint allows to Sign In a user.
+
+\begin{itemize}
+    \item URL: \texttt{wave/homepage/signin/}
+    \item Method: \texttt{POST}
+    \item URL Parameters: No parameters are required in the URL
+    \item Data Parameters:
+    
+    Required:
+    
+    \begin{itemize}
+        \item \texttt{email = \{string\}}
+        \item \texttt{password = \{string\}}
+        \item \texttt{ = \{string\}}
+    \end{itemize}
+    
+    
+    \item Success Response:\\
+    
+    Code: 200\\
+    Content: the user is redirected to the login page, which in turn uses a filter to create a session for the user and redirect them to the homepage.\\
+
+    \item Error Response:\\
+    
+    Code: 400 BAD\_REQUEST\\
+    Content: \texttt{\{``error'': \{``code'': -102, ``message'' : ``One or more input fields are empty.''\}}\\
+    When: some of the parameters are missing or are empty strings.\\
+
+    Code:  forgetpassword\\
+    Content: \texttt{\{``error'': \{``code'': -108, ``message'' : ``Different Passwords.''\}}\\
+    When: when the customer forgets the password.\\
+
+
+    
+\end{itemize}
+
+\noindent\textbf{Admin Page}\\
+The following endpoint allows to Sign In a user.
+
+\begin{itemize}
+    \item URL: \texttt{wave/admin/}
+    \item Method: \texttt{POST}
+    \item URL Parameters: No parameters are required in the URL
+      \item Data Parameters: No data passed
+    \item Success Response:\\
+    Upon success, the servlet returns a list of purchased products, the number of registered customers, and the total products. Admin can update, delete, and add both customers and products.
+
+
+    
+\end{itemize}
+
+\noindent\textbf{Cart Page}\\
+This will be a cart page where user can view, update and delete products.
+
+\begin{itemize}
+    \item URL: \texttt{wave/cart/}
+    \item Method: \texttt{POST}
+    \item URL Parameters: No parameters are required in the URL
+      \item Data Parameters: 
+      Required:
+    
+    \begin{itemize}
+        \item \texttt{product id = \{string\}}
+        \item \texttt{product name = \{string\}}
+        \item \texttt{product price = \{integer\}}
+        \item \texttt{product category = \{string\}}
+        \item \texttt{product size = \{integer\}}
+        \item \texttt{product quantity = \{integer\}}
+        \item \texttt{product name = \{string\}}
+        \item \texttt{product description = \{string\}}
+        \item \texttt{product image = \{image\}}
+       
+    \end{itemize}
+    
+    
+    \item Success Response:\\
+    
+    Code: 200\\
+    Content: the customer can update, delete and add new products to the cart. It will also show the individual and total price of the cart. \\
+
+
+    
+\end{itemize}
+
+

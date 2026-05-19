@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>wave</display-name>
+  <description>It an ONLINE shopping clothes system, where customer can order dress online.</description>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet> 
+  	<servlet-name>CreateCustomerServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.CreateCustomerServlet</servlet-class>
+  </servlet>
+  
+  <servlet> 
+  	<servlet-name>CreateProductServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.CreateProductServlet</servlet-class>
+  </servlet>
+  
+  <servlet> 
+  	<servlet-name>AdminLogin</servlet-name> 
+  	<servlet-class>wave.unipd.it.AdminLogin</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>AdminRegisteration</servlet-name> 
+  	<servlet-class>wave.unipd.it.AdminRegisteration</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>CustomerListServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.CustomerListServlet</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>DeleteCustomerDataServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.DeleteCustomerDataServlet</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>DeleteProductServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.DeleteProductServlet</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>EditCustomerServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.EditCustomerServlet</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>EditForCustomerServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.EditForCustomerServlet</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>EditForProductServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.EditForProductServlet</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>EditProductServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.EditProductServlet</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>Logout</servlet-name> 
+  	<servlet-class>wave.unipd.it.Logout</servlet-class>
+  </servlet>
+  <servlet> 
+  	<servlet-name>ProductListServlet</servlet-name> 
+  	<servlet-class>wave.unipd.it.ProductListServlet</servlet-class>
+  </servlet>
+
+	<resource-ref>
+		<description>database Connection</description>
+		<res-ref-name>jdbc/wave</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+  
+</web-app>

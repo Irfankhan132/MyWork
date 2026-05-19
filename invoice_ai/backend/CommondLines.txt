@@ -1,0 +1,2 @@
+To open DB in Powershell: docker exec -it invoice_ai_db psql -U invoiceai -d invoiceai
+

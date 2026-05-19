@@ -1,0 +1,52 @@
+\subsection{REST API Summary}
+
+% The rest API is studied to experiment with multiple different approaches to the REST paradigm. More in detail, endpoints associated with rides and devices are developed in a more traditional way, with the entirety of the information needed to satisfy the request directly in the URI.
+% Other endpoints require additional information (such as the type of operation required) as additional parameters in the request.\\
+
+% Part of the URIs are filtered through different filters. M indicates that only users with the role of maintainer can access to the endpoint, B indicates that only builders can access the endpoint, A that only administrators can request the specified URI to the server.
+
+
+% \begin{longtable}{|p{.335\columnwidth}|p{.1\columnwidth} |p{.39\columnwidth}|p{.1\columnwidth}|} 
+% \hline
+% \textbf{URI} & \textbf{Method} & \textbf{Description} & \textbf{Filter} \\\hline
+% maintenance/search/                 & GET    & By specifying search parameters directly in the URL it is possible to search for specific maintenance events. & M \\ \hline
+% maintenance/insert/                 & POST   & Allows to insert new maintenance events & M \\ \hline
+% measurement/upload/                 & POST   & Allows to upload a measurement file & M \\ \hline
+% model/editable/                     & GET    & Returns a ride model, given its name as parameter in the URL & B \\ \hline
+% model/list/                         & GET    & Returns the list of all models available in the database & B \\ \hline
+% model/insert/                       & POST   & Allows to insert a new model, passed as additional data of the request & B \\ \hline
+% model/update/                       & POST   & Allows to update a model passed as additional data in the request & B \\ \hline
+% model/                              & DELETE & Allows to delete a model of rides & B \\ \hline
+% park/editable/                      & GET    & returns the data for a specific park, given the name as URL parameter. & B \\ \hline
+% park/list/                          & GET    & Returns the list of all parks in the database & B \\ \hline
+% park/overview/                      & GET    & Returns the structure used to initialize the homepage. & \\ \hline
+% park/insert/                        & POST   & Allows to insert a park passed as data & B \\ \hline
+% park/update/                        & POST   & Allows to update a park passed as data & B \\ \hline
+% park/                               & DELETE & Allows to delete a park passed as data & B \\ \hline
+% protected/user/                     & GET    & Allows to get information on a specific user & A \\ \hline
+% protected/user/                     & POST   & Allows to update the information on a specific user & A \\ \hline
+% protected/user/                     & DELETE & Allows to delete a user & A \\ \hline
+% schema/roles/             & GET    & Allows to get schema information on the types of role available in the database & A \\ \hline
+% schema/devicetypes/       & GET    & Returns the schema information on the types of the devices that have been defined in the schema & B \\ \hline
+% schema/eventcategories/   & GET    & Returns the schema information on the event categories that have been defined in the schema & M \\ \hline
+% schema/sessiontypes/      & GET    & Returns the schema information on the types of the session types that have been defined in the schema & M \\ \hline
+% user/                               & GET    & if the additional parameter “operation” is passed and is set to “logout” allows to logout a user. & \\ \hline
+% user/login/                         & POST   & Allows to pass to the web server the credentials of a user and checks if the user is in the database and their mail and password correspond. & \\ \hline
+% user/register/                      & POST   & Allows to register a new user. & \\ \hline
+% ride/                               & POST   & Allows to insert a new ride. & B \\ \hline
+% list/ride/                          & GET    & Allows to get the list of all rides available in the database. & B \\ \hline
+% ride/\{rideid\}                     & GET    & Allows to get information on a ride & B \\ \hline
+% ride/\{rideid\}                     & PUT    & Allows to update ride informations & B \\ \hline
+% ride/\{rideid\}                     & DELETE & Allows to delete a ride & B \\ \hline
+% device/ride/\{rideid\}              & GET    & Allows to get the list of all devices associated to the ride \{rideid\} & B \\ \hline
+% device/ride/\{rideid\}              & POST   & Allows to insert at once the a of devices (passed as data) and associate them with the ride identified by \{ride id\} & B \\ \hline
+% device/ride/\{rideid\}              & DELETE & Allows to delete all the devices associated with the ride \{rideid\} & B \\ \hline
+% device/\{deviceid\}                 & GET    & Allows to get information on a specific device identified by the id \{deviceid\} & B \\ \hline
+% device/\{deviceid\}                 & PUT    & Allows to update the information of a specific device, identified by the id \{deviceid\}  &B  \\ \hline
+% device/\{deviceid\}                 & DELETE & Allows to delete a specific device & B  \\ \hline
+% device/                             & POST   & Allows to insert a new device, as specified in the data field of the header. & B \\ \hline
+% \caption{Main REST API entrypoints}
+
+
+% \label{tab:termGlossary}
+% \end{longtable}
