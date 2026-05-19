@@ -1,6 +1,7 @@
 import re
 from logger import logger
 
+
 def query_chain(chain, user_input: str):
     try:
         logger.debug(f"Running chain for input: {user_input}")
@@ -10,17 +11,15 @@ def query_chain(chain, user_input: str):
         answer = result["result"]
 
         # Remove model thinking text like <think>...</think>
-        answer = re.sub(
-            r"<think>.*?</think>",
-            "",
-            answer,
-            flags=re.DOTALL
-        ).strip()
+        answer = re.sub(r"<think>.*?</think>", "", answer, flags=re.DOTALL).strip()
 
         response = {
             "response": answer,
             "sources": [
-                doc.metadata.get("source", "")
+                {
+                    "source": doc.metadata.get("source", ""),
+                    "page": doc.metadata.get("page", "")
+                }
                 for doc in result["source_documents"]
             ]
         }

@@ -69,7 +69,9 @@ def load_vectorstore(uploaded_files):
         metadatas = [
             {
                 **chunk.metadata,
-                "text": chunk.page_content
+                "text": chunk.page_content,
+                "source": Path(file_path).name,
+                "page": chunk.metadata.get("page", 0) + 1
             }
             for chunk in chunks
         ]

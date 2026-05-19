@@ -1,5 +1,6 @@
 import streamlit as st
 from utils.api import ask_question
+from pathlib import Path
 
 def render_chat():
     st.subheader("💬 Ask a question about your medical documents:")
@@ -22,13 +23,30 @@ def render_chat():
             data = response.json()
             answer = data["response"]
             sources = data.get("sources", [])
-            st.chat_message("assistant").markdown(answer)
+            # st.chat_message("assistant").markdown(answer)
             # if sources:
             #     st.markdown("**📄Sources:**")
             #     for src in sources:
             #         st.markdown(f"- {src}")
                     
             # st.session_state.messages.append({"role": "assistant", "content": answer})
+            st.chat_message("assistant").markdown(answer)
+
+            if sources:
+                st.markdown("### 📄 Sources")
+
+                displayed = set()
+
+                for src in sources:
+                    source_path = src.get("source", "")
+                    page = src.get("page", "")
+
+                    file_name = Path(source_path).name
+                    citation_text = f"{file_name} - Page {page}"
+
+                    if citation_text not in displayed:
+                        st.markdown(f"- [{citation_text}](#)")
+                        displayed.add(citation_text)
         else:
             st.error("Error getting response from server.")
             
