@@ -20,9 +20,13 @@ st.set_page_config(
     layout="wide"
 )
 
+sessions = load_sessions()
 
 if "current_session_id" not in st.session_state:
-    st.session_state.current_session_id = create_new_session()
+    if sessions:
+        st.session_state.current_session_id = sessions[-1]["id"]
+    else:
+        st.session_state.current_session_id = create_new_session()
 
 st.sidebar.title("🩺 Medical Assistant")
 
@@ -62,23 +66,26 @@ if st.sidebar.button("🧹 Clear Saved History"):
     st.session_state.messages = []
     st.rerun()
 
+
+if st.sidebar.button("➕ New Chat"):
+    new_session_id = create_new_session()
+    st.session_state.current_session_id = new_session_id
+    st.session_state.messages = []
+    st.rerun()
+
+
 st.sidebar.markdown("---")
 st.sidebar.markdown("## 🕘 Chat History")
 
 sessions = load_sessions()
 
 if sessions:
-
     for i, session in enumerate(reversed(sessions[-10:])):
-
         title = session.get("title", "New Chat")
 
         if st.sidebar.button(f"💬 {title[:35]}...", key=f"session_{i}"):
-
             st.session_state.current_session_id = session["id"]
-
             st.session_state.messages = session["messages"]
-
             st.rerun()
 
     st.sidebar.download_button(
@@ -90,13 +97,6 @@ if sessions:
 
 else:
     st.sidebar.info("No chat history yet.")
-
-    st.sidebar.download_button(
-        label="⬇️ Export History JSON",
-        data=json.dumps(history, indent=4, ensure_ascii=False),
-        file_name="chat_history.json",
-        mime="application/json"
-    )
 
 st.title("🩺 Medical Assistant :Chatbot:")
 
