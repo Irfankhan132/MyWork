@@ -45,7 +45,12 @@ def render_chat():
         })
 
         with st.spinner("Thinking..."):
-            response = ask_question(user_input)
+            chat_history_text = ""
+            for msg in st.session_state.messages[-6:]:
+                role = msg["role"]
+                content = msg["content"]
+                chat_history_text += f"{role}: {content}\n"
+            response = ask_question(user_input, chat_history_text)
 
         if response.status_code == 200:
             data = response.json()

@@ -14,7 +14,10 @@ import os
 router=APIRouter()
 
 @router.post("/ask/")
-async def ask_question(question:str=Form(...)):
+async def ask_question(
+    question:str=Form(...),
+    chat_history:str=Form("")
+    ):
     try:
         logger.info(f"User query:{question}")
         
@@ -24,8 +27,21 @@ async def ask_question(question:str=Form(...)):
         embed_model = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
-        embedded_query = embed_model.embed_query(question)
-        res = index.query(vector = embedded_query, top_k = 3, include_metadata = True)
+        search_query = f"""
+        Conversation history:
+        {chat_history}
+
+        Current question:
+        {question}
+        """
+
+        embedded_query = embed_model.embed_query(search_query)
+
+        res = index.query(
+            vector=embedded_query,
+            top_k=5,
+            include_metadata=True
+        )
         
         print("Pinecone result:", res)
         print("Matches count:", len(res["matches"]))
@@ -54,7 +70,13 @@ async def ask_question(question:str=Form(...)):
 
         retriever = SimpleRetriever(docs)
         chain = get_llm_chain(retriever)
-        result = query_chain(chain, question)
+        full_question = f"""
+        Previous conversation history:
+        {chat_history}
+        Current question:
+        {question}
+        """
+        result = query_chain(chain, full_question)
 
         logger.info("query successful")
         return result
