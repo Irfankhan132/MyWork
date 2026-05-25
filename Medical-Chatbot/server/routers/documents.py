@@ -15,3 +15,14 @@ async def list_documents():
     ]
 
     return {"documents": documents}
+
+
+@router.delete("/documents/{filename}")
+async def delete_document(filename: str):
+    file_path = UPLOAD_DIR / filename
+
+    if file_path.exists():
+        file_path.unlink()
+        return {"message": f"{filename} deleted successfully"}
+
+    return {"error": "File not found"}

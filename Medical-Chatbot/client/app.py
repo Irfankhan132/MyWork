@@ -24,7 +24,16 @@ try:
 
         if documents:
             for doc in documents:
-                st.sidebar.markdown(f"📘 {doc}")
+                col1, col2 = st.sidebar.columns([4, 1])
+
+                with col1:
+                    st.markdown(f"📘 {doc}")
+
+                with col2:
+                    if st.button("🗑", key=f"delete_{doc}"):
+                        from utils.api import delete_document
+                        delete_document(doc)
+                        st.rerun()
         else:
             st.sidebar.info("No documents uploaded yet.")
     else:

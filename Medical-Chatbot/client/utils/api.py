@@ -10,3 +10,6 @@ def ask_question(question):
 
 def get_documents():
     return requests.get(f"{API_URL}documents/")
+
+def delete_document(filename):
+    return requests.delete(f"{API_URL}documents/{filename}")

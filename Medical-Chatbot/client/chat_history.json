@@ -1,40 +1,21 @@
 [
     {
-        "question": "Abortion, partial birth",
-        "answer": "**Answer:**  \nPartial birth abortion, also known as intact dilatation and extraction (D&X), is a late-term abortion procedure that terminates a pregnancy and results in the death and intact removal of the fetus. It is typically performed when a pregnancy needs to be ended in its later stages. The procedure is described in medical reference materials like the *GALE ENCYCLOPEDIA OF MEDICINE*.  \n\nThis information is based on the provided context and aims to explain the term factually. Let me know if you need further clarification!",
+        "question": "what is diabetes?",
+        "answer": "Diabetes is a chronic metabolic disorder characterized by high levels of sugar (glucose) in the blood, a condition called hyperglycemia. Normally, food is broken down into glucose, which enters the bloodstream and is used as fuel for the body. The hormone insulin, produced by the pancreas, helps move glucose from the blood into muscles, fat, and liver cells. In diabetes, this process is disrupted either because the pancreas does not produce enough insulin or because the body’s cells do not respond properly to insulin (a condition called insulin resistance). This leads to persistently elevated blood sugar levels.  \n\nDiabetes affects approximately 25.8 million people in the United States and is the seventh leading cause of death in the country.",
         "sources": [
             {
-                "source": "Medical_book-1-160.pdf",
-                "page": 20
+                "source": "uploaded_docs\\DIABETES.pdf",
+                "page": 0
             },
             {
-                "source": "uploaded_docs\\Medical_book-15-44.pdf",
-                "page": 5
+                "source": "uploaded_docs\\DIABETES.pdf",
+                "page": 0
             },
             {
-                "source": "uploaded_docs\\Medical_book-15-44.pdf",
-                "page": 5
+                "source": "uploaded_docs\\DIABETES.pdf",
+                "page": 3
             }
         ],
-        "timestamp": "2026-05-19 19:46:58"
-    },
-    {
-        "question": "Abortion, partial birth\n\n",
-        "answer": "The term \"partial birth abortion\" refers to a late-term abortion procedure known as **intact dilatation and extraction (D&X)**. According to the provided context:  \n\n- **Definition**: It is a method used to terminate a pregnancy in the second or third trimester, resulting in the death of the fetus and its intact removal.  \n- **Purpose**: The procedure is performed to end a pregnancy, typically when it is no longer viable or due to specific medical or personal reasons.  \n\nThe context does not include additional details about procedural steps, risks, or legal considerations. Let me know if you need clarification on any part of this information.",
-        "sources": [
-            {
-                "source": "Medical_book-1-160.pdf",
-                "page": 20
-            },
-            {
-                "source": "uploaded_docs\\Medical_book-15-44.pdf",
-                "page": 5
-            },
-            {
-                "source": "uploaded_docs\\Medical_book-15-44.pdf",
-                "page": 5
-            }
-        ],
-        "timestamp": "2026-05-19 19:59:25"
+        "timestamp": "2026-05-25 11:27:07"
     }
 ]

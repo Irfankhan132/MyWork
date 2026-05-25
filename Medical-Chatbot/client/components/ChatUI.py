@@ -2,6 +2,7 @@ import streamlit as st
 from utils.api import ask_question
 from utils.chat_history import save_chat_message
 from pathlib import Path
+import time
 
 
 def show_sources(sources):
@@ -43,14 +44,23 @@ def render_chat():
             "content": user_input
         })
 
-        response = ask_question(user_input)
+        with st.spinner("Thinking..."):
+            response = ask_question(user_input)
 
         if response.status_code == 200:
             data = response.json()
             answer = data["response"]
             sources = data.get("sources", [])
 
-            st.chat_message("assistant").markdown(answer)
+            with st.chat_message("assistant"):
+                placeholder = st.empty()
+                streamed_text = ""
+
+                for word in answer.split():
+                    streamed_text += word + " "
+                    placeholder.markdown(streamed_text)
+                    time.sleep(0.03)
+
             show_sources(sources)
 
             st.session_state.messages.append({
