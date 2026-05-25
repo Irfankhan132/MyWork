@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.api import ask_question
-from utils.chat_history import save_chat_message
+from utils.chat_history import add_message_to_session
 from pathlib import Path
 import time
 
@@ -69,7 +69,10 @@ def render_chat():
                 "sources": sources
             })
 
-            save_chat_message(user_input, answer, sources)
+            session_id = st.session_state.current_session_id
+
+            add_message_to_session(session_id, "user", user_input)
+            add_message_to_session(session_id, "assistant", answer, sources)
 
         else:
             st.error("Error getting response from server.")
