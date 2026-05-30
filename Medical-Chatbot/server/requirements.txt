@@ -1,37 +1,20 @@
-# Web Framework
 fastapi
 uvicorn[standard]
-python-multipart  # for file uploads
+python-multipart
+python-dotenv
 
-# LangChain & Ecosystem
 langchain
+langchain-classic
 langchain-community
 langchain-core
 langchain-groq
+langchain-huggingface
 
-# Vectorstore
-# chromadb
 pinecone
+pypdf
+sentence-transformers
 
-# Embeddings
-# sentence-transformers
-# langchain-google-generative-ai
-langchain-google-genai
-
-# PDF Parsing
-PyPDF  # backend for PyPDFLoader via langchain_community
-
-# Environment Variables
-python-dotenv
-
-# Typing & Utilities
 pydantic
 requests
 tqdm
-
-# Logging (optional but recommended)
 loguru
-
-
-
-#  uv pip install -r requirements.txt
