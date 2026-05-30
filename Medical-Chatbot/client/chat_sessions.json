@@ -1,1 +1,108 @@
-[]
+[
+    {
+        "id": "91f627c5-1553-46a1-b722-c1b5d381d05c",
+        "title": "What Is Diabetes",
+        "created_at": "2026-05-30 09:08:16",
+        "messages": [
+            {
+                "role": "user",
+                "content": "what is diabetes?",
+                "sources": [],
+                "timestamp": "2026-05-30 09:08:50"
+            },
+            {
+                "role": "assistant",
+                "content": "Diabetes is a chronic metabolic disorder characterized by high blood sugar levels (hyperglycemia). It occurs when the body cannot properly regulate glucose due to insufficient insulin production (Type 1), insulin resistance (Type 2), or hormone changes during pregnancy (Gestational diabetes). In the U.S., it affects ~25.8 million people and is the seventh leading cause of death. Key types include:  \n1. **Type 1 diabetes**: Autoimmune destruction of insulin-producing pancreatic cells, requiring insulin injections.  \n2. **Type 2 diabetes**: Insulin resistance in cells, often linked to obesity, aging, or genetic factors.  \n3. **Gestational diabetes**: Develops during pregnancy and increases future diabetes risk for both mother and child.  \n\nDiagnosis typically involves fasting blood glucose tests (≥126 mg/dL confirms diabetes). Risk factors include family history, ethnicity, and lifestyle factors like obesity.",
+                "sources": [
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 0
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 0
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 3
+                    }
+                ],
+                "timestamp": "2026-05-30 09:08:50"
+            },
+            {
+                "role": "user",
+                "content": "types of it",
+                "sources": [],
+                "timestamp": "2026-05-30 09:09:23"
+            },
+            {
+                "role": "assistant",
+                "content": "The types of diabetes mentioned in the documents include:  \n1. **Type 1 Diabetes (T1D)**: An autoimmune condition where the pancreas stops producing insulin due to destruction of insulin-producing beta cells. Requires daily insulin injections.  \n2. **Type 2 Diabetes**: Characterized by insulin resistance, often linked to obesity, aging, or genetics. Management includes lifestyle changes and medications.  \n3. **Gestational Diabetes**: Develops during pregnancy due to hormonal changes, increasing diabetes risk for both mother and child. Diagnosed via blood glucose testing during pregnancy.  \n\nFor further details on symptoms, risk factors, or management, let me know!",
+                "sources": [
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 0
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 0
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 1
+                    }
+                ],
+                "timestamp": "2026-05-30 09:09:23"
+            },
+            {
+                "role": "user",
+                "content": "Risk factors for it?",
+                "sources": [],
+                "timestamp": "2026-05-30 09:10:00"
+            },
+            {
+                "role": "assistant",
+                "content": "The risk factors for diabetes, based on the documents and previous discussion, include:  \n\n1. **Family history of diabetes**  \n2. **Being overweight or obese** (especially for Type 2 diabetes; being overweight before pregnancy increases gestational diabetes risk)  \n3. **High-risk ethnic groups** (specific groups not named in the documents)  \n4. **Previous gestational diabetes** (increases future diabetes risk for mother and child)  \n5. **Giving birth to a baby over 9 pounds**  \n6. **Age over 45** (a key risk factor for Type 2 diabetes)  \n7. **Insulin resistance** (a gradual process leading to Type 2 diabetes)  \n\nFor gestational diabetes specifically, additional risks include obesity during pregnancy and hormonal changes. Let me know if you need further clarification!",
+                "sources": [
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 0
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 0
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "uploaded_docs\\DIABETES.pdf",
+                        "page": 1
+                    }
+                ],
+                "timestamp": "2026-05-30 09:10:00"
+            }
+        ]
+    }
+]

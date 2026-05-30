@@ -44,6 +44,16 @@ def get_session(session_id):
     return None
 
 
+def generate_chat_title(question):
+    words = question.strip().replace("?", "").split()
+
+    if len(words) <= 5:
+        return question.strip().replace("?", "").title()
+
+    return " ".join(words[:5]).title()
+
+
+
 def add_message_to_session(session_id, role, content, sources=None):
     sessions = load_sessions()
 
@@ -57,7 +67,7 @@ def add_message_to_session(session_id, role, content, sources=None):
             })
 
             if session["title"] == "New Chat" and role == "user":
-                session["title"] = content[:35]
+                session["title"] = generate_chat_title(content)
 
             break
 

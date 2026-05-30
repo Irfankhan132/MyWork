@@ -4,10 +4,15 @@ from middlewares.exception_handlers import catch_exception_middleware
 from routers.upload_pdfs import router as upload_router
 from routers.ask_question import router as ask_router
 from routers.documents import router as documents_router
+from fastapi.staticfiles import StaticFiles
 
-app = FastAPI(
-    title="Medical Assistant API", description="API for AI Medical Assistant Chatbot"
-)
+# app = FastAPI(
+#     title="Medical Assistant API", description="API for AI Medical Assistant Chatbot"
+# )
+
+app = FastAPI(title="Medical Assistant API")
+
+app.mount("/uploaded_docs", StaticFiles(directory="uploaded_docs"), name="uploaded_docs")
 
 # CORS Setup
 app.add_middleware(

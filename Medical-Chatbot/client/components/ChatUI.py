@@ -19,7 +19,9 @@ def show_sources(sources):
             citation_text = f"{file_name} - Page {page}"
 
             if citation_text not in displayed:
-                st.markdown(f"- [{citation_text}](#)")
+                pdf_url = f"http://127.0.0.1:8000/uploaded_docs/{file_name}#page={page}"
+
+                st.markdown(f"- [{citation_text}]({pdf_url})")
                 displayed.add(citation_text)
 
 
