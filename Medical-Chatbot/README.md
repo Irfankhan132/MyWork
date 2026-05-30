@@ -407,10 +407,10 @@ Specialization:
 * Software Development
 
 GitHub:
-https://github.com/Irfankhan132
+https://github.com/Irfankhan132/MyWork
 
 LinkedIn:
-https://www.linkedin.com/in/irfankhan132
+https://www.linkedin.com/in/irfan-khan-developer/
 
 ---
 
