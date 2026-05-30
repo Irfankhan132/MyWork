@@ -240,7 +240,7 @@ Answer and document citations are returned to the user.
 
 ---
 
-# 📸 Screenshots
+# 📸 Screenshots (Coming Soon)
 
 ### Login Page
 
