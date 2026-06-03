@@ -17,8 +17,8 @@ PINECONE_INDEX_NAME="medicalindex384"
 
 os.environ["GOOGLE_API_KEY"]=GOOGLE_API_KEY
 
-UPLOAD_DIR="./uploaded_docs"
-os.makedirs(UPLOAD_DIR,exist_ok=True)
+UPLOAD_DIR = "./uploaded_docs"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
 # initialize pinecone instance
@@ -41,14 +41,18 @@ index=pc.Index(PINECONE_INDEX_NAME)
 
 # load,split,embed and upsert pdf docs content
 
-def load_vectorstore(uploaded_files):
+def load_vectorstore(uploaded_files, username):
     embed_model = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
     file_paths = []
+    
+    user_upload_dir = Path(UPLOAD_DIR) / username
+    user_upload_dir.mkdir(parents=True, exist_ok=True)
 
     for file in uploaded_files:
-        save_path = Path(UPLOAD_DIR) / file.filename
+        # save_path = Path(UPLOAD_DIR) / file.filename
+        save_path = user_upload_dir / file.filename
         with open(save_path, "wb") as f:
             f.write(file.file.read())
         file_paths.append(str(save_path))
@@ -71,12 +75,13 @@ def load_vectorstore(uploaded_files):
                 **chunk.metadata,
                 "text": chunk.page_content,
                 "source": Path(file_path).name,
-                "page": chunk.metadata.get("page", 0) + 1
+                "page": chunk.metadata.get("page", 0) + 1,
+                "user_id": username
             }
             for chunk in chunks
         ]
 
-        ids = [f"{Path(file_path).stem}-{i}" for i in range(len(chunks))]
+        ids = [f"{username}-{Path(file_path).stem}-{i}" for i in range(len(chunks))]
 
         # print(f"🔍 Embedding {len(texts)} chunks...")
         # embeddings = embed_model.embed_documents(texts)

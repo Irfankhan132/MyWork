@@ -1,21 +1,23 @@
 import requests
 from config import API_URL
 
-def upload_pdfs_api(files):
+def upload_pdfs_api(files, username):
     files_payload = [("files", (f.name, f.read(), "application/pdf")) for f in files]
-    return requests.post(f"{API_URL}upload_pdfs/", files=files_payload)
+    data = {"username": username}
+    return requests.post(f"{API_URL}upload_pdfs/", files=files_payload, data=data)
 
-def ask_question(question, chat_history=""):
+def ask_question(question, chat_history="", username=""):
     return requests.post(
-        f"{API_URL}ask/", 
+        f"{API_URL}ask/",
         data={
-            "question": question, 
-            "chat_history": chat_history
-            }
-        )
+            "question": question,
+            "chat_history": chat_history,
+            "username": username
+        }
+    )
 
-def get_documents():
-    return requests.get(f"{API_URL}documents/")
+def get_documents(username):
+    return requests.get(f"{API_URL}documents/", params={"username": username})
 
-def delete_document(filename):
-    return requests.delete(f"{API_URL}documents/{filename}")
+def delete_document(filename, username):
+    return requests.delete(f"{API_URL}documents/{filename}", params={"username": username})

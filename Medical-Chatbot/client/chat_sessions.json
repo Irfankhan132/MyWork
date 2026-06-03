@@ -102,6 +102,105 @@
                     }
                 ],
                 "timestamp": "2026-05-30 09:10:00"
+            },
+            {
+                "role": "user",
+                "content": "what is diabetes?",
+                "sources": [],
+                "timestamp": "2026-06-03 17:24:55"
+            },
+            {
+                "role": "assistant",
+                "content": "I could not find relevant information in the uploaded documents.",
+                "sources": [
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 108
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 7
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 83
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 111
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 154
+                    }
+                ],
+                "timestamp": "2026-06-03 17:24:55"
+            },
+            {
+                "role": "user",
+                "content": "Abortion",
+                "sources": [],
+                "timestamp": "2026-06-03 17:28:13"
+            },
+            {
+                "role": "assistant",
+                "content": "Abortion refers to the termination of a pregnancy. The retrieved context specifically mentions \"partial-birth abortion,\" which is a procedure performed later in pregnancy. According to the information, the expected outcome of such procedures, like D&X (dilation and extraction), is the termination of pregnancy with removal of a dead fetus from the woman’s body. The documents also note that ethical considerations should be taken into account when seeking an abortion, including the risks and implications of the procedure.",
+                "sources": [
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 20
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 21
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 7
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 21
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 22
+                    }
+                ],
+                "timestamp": "2026-06-03 17:28:13"
+            },
+            {
+                "role": "user",
+                "content": "what is diabetes?",
+                "sources": [],
+                "timestamp": "2026-06-03 17:42:44"
+            },
+            {
+                "role": "assistant",
+                "content": "Diabetes is a chronic metabolic disorder characterized by high blood sugar levels (hyperglycemia). It occurs when the body either cannot produce enough insulin (Type 1), does not use insulin effectively (Type 2), or develops the condition during pregnancy (gestational diabetes). Key details from the document:  \n- **Type 1 Diabetes**: Autoimmune destruction of insulin-producing pancreatic cells, requiring insulin injections.  \n- **Type 2 Diabetes**: Insulin resistance due to factors like obesity, aging, or genetic predisposition.  \n- **Gestational Diabetes**: Develops during pregnancy and increases future diabetes risk.  \n- **Diagnosis**: Fasting blood glucose ≥126 mg/dL confirms diabetes; 100–125 mg/dL indicates prediabetes.  \n\nRisk factors include family history, ethnicity, obesity, and pancreas-related conditions. The document emphasizes that diabetes is a leading cause of death in the U.S., affecting over 25 million people.",
+                "sources": [
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    }
+                ],
+                "timestamp": "2026-06-03 17:42:44"
             }
         ]
     }

@@ -52,7 +52,9 @@ def render_chat():
                 role = msg["role"]
                 content = msg["content"]
                 chat_history_text += f"{role}: {content}\n"
-            response = ask_question(user_input, chat_history_text)
+            
+            username = st.session_state.get("username", "guest")
+            response = ask_question(user_input, chat_history_text, username)
 
         if response.status_code == 200:
             data = response.json()

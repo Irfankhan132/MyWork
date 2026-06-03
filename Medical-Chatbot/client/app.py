@@ -89,7 +89,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("## 📄 Uploaded Documents")
 
 try:
-    response = get_documents()
+    response = get_documents(st.session_state.username)
 
     if response.status_code == 200:
         documents = response.json().get("documents", [])
@@ -104,7 +104,7 @@ try:
                 with col2:
                     if st.button("🗑", key=f"delete_{doc}"):
                         from utils.api import delete_document
-                        delete_document(doc)
+                        delete_document(doc, st.session_state.username)
                         st.rerun()
         else:
             st.sidebar.info("No documents uploaded yet.")

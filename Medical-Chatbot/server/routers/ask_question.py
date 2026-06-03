@@ -16,6 +16,7 @@ router=APIRouter()
 @router.post("/ask/")
 async def ask_question(
     question:str=Form(...),
+    username:str=Form(...),
     chat_history:str=Form("")
     ):
     try:
@@ -40,7 +41,8 @@ async def ask_question(
         res = index.query(
             vector=embedded_query,
             top_k=5,
-            include_metadata=True
+            include_metadata=True,
+            filter={"user_id": username}
         )
         
         print("Pinecone result:", res)
