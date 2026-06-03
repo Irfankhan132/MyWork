@@ -1,150 +1,18 @@
 [
     {
-        "id": "91f627c5-1553-46a1-b722-c1b5d381d05c",
-        "title": "What Is Diabetes",
-        "created_at": "2026-05-30 09:08:16",
+        "id": "69bb0fa3-3850-4935-8add-56e6cc31a8f5",
+        "title": "Abortion, Partial Birth",
+        "created_at": "2026-06-03 20:59:42",
         "messages": [
             {
                 "role": "user",
-                "content": "what is diabetes?",
+                "content": "Abortion, partial birth",
                 "sources": [],
-                "timestamp": "2026-05-30 09:08:50"
+                "timestamp": "2026-06-03 21:00:48"
             },
             {
                 "role": "assistant",
-                "content": "Diabetes is a chronic metabolic disorder characterized by high blood sugar levels (hyperglycemia). It occurs when the body cannot properly regulate glucose due to insufficient insulin production (Type 1), insulin resistance (Type 2), or hormone changes during pregnancy (Gestational diabetes). In the U.S., it affects ~25.8 million people and is the seventh leading cause of death. Key types include:  \n1. **Type 1 diabetes**: Autoimmune destruction of insulin-producing pancreatic cells, requiring insulin injections.  \n2. **Type 2 diabetes**: Insulin resistance in cells, often linked to obesity, aging, or genetic factors.  \n3. **Gestational diabetes**: Develops during pregnancy and increases future diabetes risk for both mother and child.  \n\nDiagnosis typically involves fasting blood glucose tests (≥126 mg/dL confirms diabetes). Risk factors include family history, ethnicity, and lifestyle factors like obesity.",
-                "sources": [
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 0
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 1
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 0
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 1
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 3
-                    }
-                ],
-                "timestamp": "2026-05-30 09:08:50"
-            },
-            {
-                "role": "user",
-                "content": "types of it",
-                "sources": [],
-                "timestamp": "2026-05-30 09:09:23"
-            },
-            {
-                "role": "assistant",
-                "content": "The types of diabetes mentioned in the documents include:  \n1. **Type 1 Diabetes (T1D)**: An autoimmune condition where the pancreas stops producing insulin due to destruction of insulin-producing beta cells. Requires daily insulin injections.  \n2. **Type 2 Diabetes**: Characterized by insulin resistance, often linked to obesity, aging, or genetics. Management includes lifestyle changes and medications.  \n3. **Gestational Diabetes**: Develops during pregnancy due to hormonal changes, increasing diabetes risk for both mother and child. Diagnosed via blood glucose testing during pregnancy.  \n\nFor further details on symptoms, risk factors, or management, let me know!",
-                "sources": [
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 0
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 0
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 4
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 2
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 1
-                    }
-                ],
-                "timestamp": "2026-05-30 09:09:23"
-            },
-            {
-                "role": "user",
-                "content": "Risk factors for it?",
-                "sources": [],
-                "timestamp": "2026-05-30 09:10:00"
-            },
-            {
-                "role": "assistant",
-                "content": "The risk factors for diabetes, based on the documents and previous discussion, include:  \n\n1. **Family history of diabetes**  \n2. **Being overweight or obese** (especially for Type 2 diabetes; being overweight before pregnancy increases gestational diabetes risk)  \n3. **High-risk ethnic groups** (specific groups not named in the documents)  \n4. **Previous gestational diabetes** (increases future diabetes risk for mother and child)  \n5. **Giving birth to a baby over 9 pounds**  \n6. **Age over 45** (a key risk factor for Type 2 diabetes)  \n7. **Insulin resistance** (a gradual process leading to Type 2 diabetes)  \n\nFor gestational diabetes specifically, additional risks include obesity during pregnancy and hormonal changes. Let me know if you need further clarification!",
-                "sources": [
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 0
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 0
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 4
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 1
-                    },
-                    {
-                        "source": "uploaded_docs\\DIABETES.pdf",
-                        "page": 1
-                    }
-                ],
-                "timestamp": "2026-05-30 09:10:00"
-            },
-            {
-                "role": "user",
-                "content": "what is diabetes?",
-                "sources": [],
-                "timestamp": "2026-06-03 17:24:55"
-            },
-            {
-                "role": "assistant",
-                "content": "I could not find relevant information in the uploaded documents.",
-                "sources": [
-                    {
-                        "source": "Medical_book-1-160.pdf",
-                        "page": 108
-                    },
-                    {
-                        "source": "Medical_book-1-160.pdf",
-                        "page": 7
-                    },
-                    {
-                        "source": "Medical_book-1-160.pdf",
-                        "page": 83
-                    },
-                    {
-                        "source": "Medical_book-1-160.pdf",
-                        "page": 111
-                    },
-                    {
-                        "source": "Medical_book-1-160.pdf",
-                        "page": 154
-                    }
-                ],
-                "timestamp": "2026-06-03 17:24:55"
-            },
-            {
-                "role": "user",
-                "content": "Abortion",
-                "sources": [],
-                "timestamp": "2026-06-03 17:28:13"
-            },
-            {
-                "role": "assistant",
-                "content": "Abortion refers to the termination of a pregnancy. The retrieved context specifically mentions \"partial-birth abortion,\" which is a procedure performed later in pregnancy. According to the information, the expected outcome of such procedures, like D&X (dilation and extraction), is the termination of pregnancy with removal of a dead fetus from the woman’s body. The documents also note that ethical considerations should be taken into account when seeking an abortion, including the risks and implications of the procedure.",
+                "content": "Partial birth abortion, also known as intact dilatation and extraction (D&X), is a late-term abortion procedure that terminates a pregnancy and results in the death and intact removal of a fetus. It is typically performed when the fetus is no longer viable or due to specific medical or ethical reasons. The procedure involves dilating the cervix and extracting the fetus, which is described as \"intact\" in the documentation.  \n\nThe retrieved context highlights debates around late-term abortion, ethical considerations (e.g., sex selection, severe fetal abnormalities), and references to medical literature discussing its risks and rationale. Aftercare includes counseling to address physical and emotional recovery.  \n\nFor further reading, the documents cite sources such as *JAMA* and *Humanist* journals, which discuss the medical, ethical, and legal aspects of partial-birth abortion.",
                 "sources": [
                     {
                         "source": "Medical_book-1-160.pdf",
@@ -156,32 +24,32 @@
                     },
                     {
                         "source": "Medical_book-1-160.pdf",
-                        "page": 7
-                    },
-                    {
-                        "source": "Medical_book-1-160.pdf",
                         "page": 21
                     },
                     {
                         "source": "Medical_book-1-160.pdf",
                         "page": 22
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 20
                     }
                 ],
-                "timestamp": "2026-06-03 17:28:13"
+                "timestamp": "2026-06-03 21:00:49"
             },
             {
                 "role": "user",
-                "content": "what is diabetes?",
+                "content": "Abortion",
                 "sources": [],
-                "timestamp": "2026-06-03 17:42:44"
+                "timestamp": "2026-06-03 21:02:39"
             },
             {
                 "role": "assistant",
-                "content": "Diabetes is a chronic metabolic disorder characterized by high blood sugar levels (hyperglycemia). It occurs when the body either cannot produce enough insulin (Type 1), does not use insulin effectively (Type 2), or develops the condition during pregnancy (gestational diabetes). Key details from the document:  \n- **Type 1 Diabetes**: Autoimmune destruction of insulin-producing pancreatic cells, requiring insulin injections.  \n- **Type 2 Diabetes**: Insulin resistance due to factors like obesity, aging, or genetic predisposition.  \n- **Gestational Diabetes**: Develops during pregnancy and increases future diabetes risk.  \n- **Diagnosis**: Fasting blood glucose ≥126 mg/dL confirms diabetes; 100–125 mg/dL indicates prediabetes.  \n\nRisk factors include family history, ethnicity, obesity, and pancreas-related conditions. The document emphasizes that diabetes is a leading cause of death in the U.S., affecting over 25 million people.",
+                "content": "I could not find relevant information in the uploaded documents. The provided context discusses diabetes (gestational, type 1, and type 2), including risk factors, complications, and management, but does not address abortion or related procedures. For questions about abortion, refer to the previous conversation for information on partial-birth abortion (D&X).",
                 "sources": [
                     {
                         "source": "DIABETES.pdf",
-                        "page": 1
+                        "page": 5
                     },
                     {
                         "source": "DIABETES.pdf",
@@ -189,7 +57,7 @@
                     },
                     {
                         "source": "DIABETES.pdf",
-                        "page": 1
+                        "page": 3
                     },
                     {
                         "source": "DIABETES.pdf",
@@ -197,43 +65,10 @@
                     },
                     {
                         "source": "DIABETES.pdf",
-                        "page": 4
+                        "page": 2
                     }
                 ],
-                "timestamp": "2026-06-03 17:42:44"
-            },
-            {
-                "role": "user",
-                "content": "What is diabetes?",
-                "sources": [],
-                "timestamp": "2026-06-03 19:36:42"
-            },
-            {
-                "role": "assistant",
-                "content": "Diabetes mellitus, or diabetes, is a chronic metabolic disorder characterized by high blood sugar levels (hyperglycemia). It occurs when the body either cannot produce enough insulin (a hormone that regulates blood sugar) or cannot use it effectively. Key types include:  \n\n1. **Type 1 Diabetes**: An autoimmune condition where the pancreas stops producing insulin due to the destruction of insulin-producing beta cells. Requires daily insulin injections.  \n2. **Type 2 Diabetes**: Caused by insulin resistance (cells fail to respond to insulin) and decreased insulin production. Risk factors include obesity, family history, ethnic background, and aging.  \n3. **Gestational Diabetes**: Develops during pregnancy, often linked to hormonal changes or pre-existing risk factors.  \n\nDiagnosis typically involves a fasting blood glucose test (≥126 mg/dL confirms diabetes; 100–125 mg/dL is prediabetes). Other risk factors include family history, pancreatic disease, or infections affecting insulin production.  \n\nFor detailed risk factors or diagnostic criteria, refer to the document.",
-                "sources": [
-                    {
-                        "source": "DIABETES.pdf",
-                        "page": 1
-                    },
-                    {
-                        "source": "DIABETES.pdf",
-                        "page": 2
-                    },
-                    {
-                        "source": "DIABETES.pdf",
-                        "page": 1
-                    },
-                    {
-                        "source": "DIABETES.pdf",
-                        "page": 2
-                    },
-                    {
-                        "source": "DIABETES.pdf",
-                        "page": 4
-                    }
-                ],
-                "timestamp": "2026-06-03 19:36:42"
+                "timestamp": "2026-06-03 21:02:39"
             }
         ]
     }

@@ -5,6 +5,11 @@ from langchain_community.document_loaders import PyPDFLoader
 from modules.llm import generate_document_summary
 from logger import logger
 
+from modules.llm import (
+    generate_document_summary,
+    generate_suggested_questions
+)
+
 router = APIRouter()
 
 UPLOAD_DIR = Path("./uploaded_docs")
@@ -34,9 +39,15 @@ async def summarize_document(
 
         summary = generate_document_summary(full_text, filename)
 
+        questions = generate_suggested_questions(
+            full_text,
+            filename
+        )
+
         return {
             "filename": filename,
-            "summary": summary
+            "summary": summary,
+            "suggested_questions": questions
         }
 
     except Exception as e:
