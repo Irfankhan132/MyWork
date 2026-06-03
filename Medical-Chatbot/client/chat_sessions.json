@@ -201,6 +201,39 @@
                     }
                 ],
                 "timestamp": "2026-06-03 17:42:44"
+            },
+            {
+                "role": "user",
+                "content": "What is diabetes?",
+                "sources": [],
+                "timestamp": "2026-06-03 19:36:42"
+            },
+            {
+                "role": "assistant",
+                "content": "Diabetes mellitus, or diabetes, is a chronic metabolic disorder characterized by high blood sugar levels (hyperglycemia). It occurs when the body either cannot produce enough insulin (a hormone that regulates blood sugar) or cannot use it effectively. Key types include:  \n\n1. **Type 1 Diabetes**: An autoimmune condition where the pancreas stops producing insulin due to the destruction of insulin-producing beta cells. Requires daily insulin injections.  \n2. **Type 2 Diabetes**: Caused by insulin resistance (cells fail to respond to insulin) and decreased insulin production. Risk factors include obesity, family history, ethnic background, and aging.  \n3. **Gestational Diabetes**: Develops during pregnancy, often linked to hormonal changes or pre-existing risk factors.  \n\nDiagnosis typically involves a fasting blood glucose test (≥126 mg/dL confirms diabetes; 100–125 mg/dL is prediabetes). Other risk factors include family history, pancreatic disease, or infections affecting insulin production.  \n\nFor detailed risk factors or diagnostic criteria, refer to the document.",
+                "sources": [
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    }
+                ],
+                "timestamp": "2026-06-03 19:36:42"
             }
         ]
     }

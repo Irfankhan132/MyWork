@@ -60,3 +60,40 @@ def get_llm_chain(retriever):
         chain_type_kwargs = {"prompt":prompt},
         return_source_documents = True
     )
+    
+    
+
+def generate_document_summary(text, filename):
+    llm = ChatGroq(
+        groq_api_key=GROQ_API_KEY,
+        model_name="qwen/qwen3-32b"
+    )
+
+    prompt = f"""
+You are MediBot, an AI medical document assistant.
+
+Summarize the following medical document content.
+
+Document name:
+{filename}
+
+Document content:
+{text}
+
+Create a structured summary with:
+
+1. Short Summary
+2. Key Medical Topics
+3. Symptoms Mentioned
+4. Treatments or Medications Mentioned
+5. Important Notes
+
+Rules:
+- Use only the document content.
+- Do not add external medical knowledge.
+- Do not give diagnosis or personal medical advice.
+- Keep the summary clear and concise.
+"""
+
+    response = llm.invoke(prompt)
+    return response.content

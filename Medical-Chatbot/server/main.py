@@ -5,6 +5,8 @@ from routers.upload_pdfs import router as upload_router
 from routers.ask_question import router as ask_router
 from routers.documents import router as documents_router
 from fastapi.staticfiles import StaticFiles
+from routers.summary import router as summary_router
+
 
 # app = FastAPI(
 #     title="Medical Assistant API", description="API for AI Medical Assistant Chatbot"
@@ -35,3 +37,4 @@ app.include_router(upload_router)
 app.include_router(ask_router)
 
 app.include_router(documents_router)
+app.include_router(summary_router)

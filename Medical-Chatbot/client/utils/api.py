@@ -15,9 +15,21 @@ def ask_question(question, chat_history="", username=""):
             "username": username
         }
     )
+    
+
 
 def get_documents(username):
     return requests.get(f"{API_URL}documents/", params={"username": username})
 
 def delete_document(filename, username):
     return requests.delete(f"{API_URL}documents/{filename}", params={"username": username})
+
+
+def summarize_document(username, filename):
+    return requests.post(
+        f"{API_URL}summary/",
+        data={
+            "username": username,
+            "filename": filename
+        }
+    )
