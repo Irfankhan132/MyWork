@@ -51,7 +51,7 @@ async def ask_question(
 
         res = index.query(
             vector=embedded_query,
-            top_k=15,
+            top_k=20,
             include_metadata=True,
             filter={"user_id": username}
         )
@@ -88,6 +88,18 @@ async def ask_question(
             key=lambda doc: doc.metadata.get("hybrid_score", 0),
             reverse=True
         )
+        
+        # Keep only best reranked chunks
+        docs = docs[:5]
+
+        print("\n===== RERANKED RESULTS =====")
+
+        for i, doc in enumerate(docs, start=1):
+            print(
+                f"Rank {i} | "
+                f"Hybrid Score: {doc.metadata['hybrid_score']:.4f} | "
+                f"Page: {doc.metadata.get('page')}"
+            )
         
         class SimpleRetriever(BaseRetriever):
             tags: Optional[List[str]] = Field(default_factory=list)

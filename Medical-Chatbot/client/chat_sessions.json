@@ -434,6 +434,72 @@
                     }
                 ],
                 "timestamp": "2026-06-04 10:48:29"
+            },
+            {
+                "role": "user",
+                "content": "What is gestational diabetes?",
+                "sources": [],
+                "timestamp": "2026-06-04 10:59:24"
+            },
+            {
+                "role": "assistant",
+                "content": "Gestational diabetes is a type of diabetes that develops during pregnancy, typically diagnosed through blood glucose measurements during an oral glucose tolerance test (OGTT). It occurs due to hormonal changes and weight gain during pregnancy, which can impair insulin function, leading to high blood sugar levels. This condition usually resolves after childbirth, but women with a history of gestational diabetes have a 40-60% risk of developing type 2 diabetes within 5 to 10 years. Symptoms, if present, are similar to type 2 diabetes and may not always be noticeable, necessitating routine screening during pregnancy. Risk factors include a family history of diabetes. Management involves monitoring blood glucose levels and addressing risk factors postpartum.",
+                "sources": [
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 3
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    }
+                ],
+                "timestamp": "2026-06-04 10:59:24"
+            },
+            {
+                "role": "user",
+                "content": "What are its symptoms?",
+                "sources": [],
+                "timestamp": "2026-06-04 10:59:44"
+            },
+            {
+                "role": "assistant",
+                "content": "Gestational diabetes may not show noticeable symptoms, which is why routine screening during pregnancy is essential. When symptoms do occur, they are similar to those of type 2 diabetes, though specific manifestations are not detailed in the provided context. Testing via blood glucose measurements (e.g., OGTT) is required for diagnosis.",
+                "sources": [
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 3
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    }
+                ],
+                "timestamp": "2026-06-04 10:59:44"
             }
         ]
     }
