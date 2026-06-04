@@ -33,3 +33,9 @@ def summarize_document(username, filename):
             "filename": filename
         }
     )
+    
+def get_evaluation_data(username):
+    return requests.get(
+        f"{API_URL}evaluation/",
+        params={"username": username}
+    )

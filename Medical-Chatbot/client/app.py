@@ -11,6 +11,9 @@ from utils.chat_history import (
     clear_all_sessions
 )
 
+from utils.api import get_evaluation_data
+
+
 st.set_page_config(
     page_title="🩺 AI Medical Assistant",
     page_icon="🏥",
@@ -73,6 +76,8 @@ if "current_session_id" not in st.session_state:
     else:
         st.session_state.current_session_id = create_new_session()
 
+
+
 # =========================
 # Sidebar
 # =========================
@@ -84,6 +89,9 @@ if st.sidebar.button("🚪 Logout"):
     st.session_state.username = ""
     st.session_state.messages = []
     st.rerun()
+
+if st.sidebar.button("📊 Evaluation Dashboard"):
+    st.session_state.show_evaluation = True
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("## 📄 Uploaded Documents")
@@ -155,6 +163,31 @@ else:
 # Main Page
 # =========================
 st.title("🩺 Medical Assistant :Chatbot:")
+
+
+if st.session_state.get("show_evaluation", False):
+    st.markdown("## 📊 Evaluation Dashboard")
+
+    response = get_evaluation_data(st.session_state.username)
+
+    if response.status_code == 200:
+        data = response.json()
+
+        col1, col2 = st.columns(2)
+
+        col1.metric("Total Queries", data.get("total_queries", 0))
+        col2.metric("Average Response Time", f"{data.get('average_response_time', 0)} sec")
+
+        st.markdown("### Query Logs")
+
+        for log in reversed(data.get("logs", [])[-10:]):
+            with st.expander(f"{log['timestamp']} | {log['username']} | {log['question']}"):
+                st.write(f"Response Time: {log['response_time_seconds']} sec")
+                st.write(f"Retrieved Chunks: {log['retrieved_chunks']}")
+                st.write("Sources:")
+                st.json(log["sources"])
+    else:
+        st.error("Could not load evaluation data.")
 
 render_upload()
 render_chat()

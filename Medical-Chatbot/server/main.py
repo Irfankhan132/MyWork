@@ -6,6 +6,7 @@ from routers.ask_question import router as ask_router
 from routers.documents import router as documents_router
 from fastapi.staticfiles import StaticFiles
 from routers.summary import router as summary_router
+from routers.evaluation import router as evaluation_router
 
 
 # app = FastAPI(
@@ -38,3 +39,4 @@ app.include_router(ask_router)
 
 app.include_router(documents_router)
 app.include_router(summary_router)
+app.include_router(evaluation_router)

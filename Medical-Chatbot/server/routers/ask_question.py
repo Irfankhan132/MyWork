@@ -10,6 +10,8 @@ from pydantic import Field
 from typing import List, Optional
 from logger import logger
 import os
+import time
+from modules.evaluation_logger import save_evaluation_log
 
 router=APIRouter()
 
@@ -32,6 +34,7 @@ async def ask_question(
     ):
     try:
         logger.info(f"User query:{question}")
+        start_time = time.time()
         
         # embed model + pinecone setup
         pc = Pinecone(api_key = os.environ["PINECONE_API_KEY"])
@@ -121,6 +124,24 @@ async def ask_question(
         {question}
         """
         result = query_chain(chain, full_question)
+        
+        response_time = time.time() - start_time
+        sources = [
+            {
+                "source": doc.metadata.get("source", ""),
+                "page": doc.metadata.get("page", ""),
+                "hybrid_score": doc.metadata.get("hybrid_score", 0)
+            }
+            for doc in docs
+        ]
+        
+        save_evaluation_log(
+            username=username,
+            question=question,
+            response_time=response_time,
+            sources=sources,
+            retrieved_chunks=len(docs)
+        )
 
         logger.info("query successful")
         return result
