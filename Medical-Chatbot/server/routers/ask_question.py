@@ -13,6 +13,17 @@ import os
 
 router=APIRouter()
 
+def keyword_score(text: str, query: str) -> int:
+    text = text.lower()
+    keywords = query.lower().split()
+
+    score = 0
+    for word in keywords:
+        if len(word) > 3 and word in text:
+            score += 1
+
+    return score
+
 @router.post("/ask/")
 async def ask_question(
     question:str=Form(...),
@@ -40,7 +51,7 @@ async def ask_question(
 
         res = index.query(
             vector=embedded_query,
-            top_k=5,
+            top_k=15,
             include_metadata=True,
             filter={"user_id": username}
         )
@@ -52,12 +63,31 @@ async def ask_question(
             print("Score:", match["score"])
             print("Metadata:", match["metadata"])
         
-        docs = [
-            Document(
-                page_content=match["metadata"].get("text",""),
-                metadata = match["metadata"]
-            ) for match in res["matches"]
-        ]
+        docs = []
+
+        for match in res["matches"]:
+            text = match["metadata"].get("text", "")
+            metadata = match["metadata"]
+
+            vector_score = match.get("score", 0)
+            keyword_match_score = keyword_score(text, question)
+
+            metadata["vector_score"] = vector_score
+            metadata["keyword_score"] = keyword_match_score
+            metadata["hybrid_score"] = vector_score + (0.1 * keyword_match_score)
+
+            docs.append(
+                Document(
+                    page_content=text,
+                    metadata=metadata
+                )
+            )
+
+        docs = sorted(
+            docs,
+            key=lambda doc: doc.metadata.get("hybrid_score", 0),
+            reverse=True
+        )
         
         class SimpleRetriever(BaseRetriever):
             tags: Optional[List[str]] = Field(default_factory=list)

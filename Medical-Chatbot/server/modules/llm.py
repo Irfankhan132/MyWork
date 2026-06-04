@@ -25,10 +25,17 @@ def clean_llm_output(text: str) -> str:
 
 
 def get_llm_chain(retriever):
-    llm = ChatGroq(
-        groq_api_key=GROQ_API_KEY,
-        model_name="qwen/qwen3-32b"
-    )
+    try:
+        llm = ChatGroq(
+            groq_api_key=GROQ_API_KEY,
+            model_name="qwen/qwen3-32b"
+        )
+
+    except:
+        llm = ChatGroq(
+            groq_api_key=GROQ_API_KEY,
+            model_name="llama-3.3-70b-versatile"
+        )
 
     prompt = PromptTemplate(
         input_variables=["context", "question"],

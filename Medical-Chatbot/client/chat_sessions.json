@@ -69,6 +69,371 @@
                     }
                 ],
                 "timestamp": "2026-06-03 21:02:39"
+            },
+            {
+                "role": "user",
+                "content": "What is gestational diabetes?",
+                "sources": [],
+                "timestamp": "2026-06-04 10:35:13"
+            },
+            {
+                "role": "assistant",
+                "content": "Gestational diabetes is a type of diabetes that is first diagnosed during pregnancy. It occurs when the body is not able to produce enough insulin, resulting in high blood sugar levels. According to the context, it is diagnosed based on blood glucose levels measured during the OGTT, and symptoms may or may not develop during pregnancy. Approximately 8 out of 100 pregnant women in the U.S develop gestational diabetes, and weight gain and changing hormones that occur during pregnancy can impair insulin function. This form of diabetes usually disappears after pregnancy, but women who have had gestational diabetes have a 40-60% chance of developing type 2 diabetes within 5 to 10 years.",
+                "sources": [
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 3
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 142
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    }
+                ],
+                "timestamp": "2026-06-04 10:35:13"
+            },
+            {
+                "role": "user",
+                "content": "What are its symptoms?",
+                "sources": [],
+                "timestamp": "2026-06-04 10:37:47"
+            },
+            {
+                "role": "assistant",
+                "content": "The symptoms of gestational diabetes may or may not develop during pregnancy and are the same as for type 2 diabetes. They can include frequent urination, excessive thirst and hunger, weakness and fatigue, nausea and vomiting, blurred vision, hard to heal skin, gum or bladder infections, and tingling or numbness in the hands or feet.",
+                "sources": [
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 3
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 80
+                    }
+                ],
+                "timestamp": "2026-06-04 10:37:47"
+            },
+            {
+                "role": "user",
+                "content": "What complications are mentioned for diabetes?",
+                "sources": [],
+                "timestamp": "2026-06-04 10:44:10"
+            },
+            {
+                "role": "assistant",
+                "content": "The complications mentioned for diabetes are: \n1. Kidney disease (Diabetic nephropathy) \n2. Blindness (Diabetic retinopathy) \n3. Heart disease and stroke. \nAdditionally, other complications mentioned include: \n4. Nerve damage \n5. Sores on feet and skin possibly resulting in amputations \n6. Diabetic coma due to extremely high blood sugar.",
+                "sources": [
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 3
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 3
+                    }
+                ],
+                "timestamp": "2026-06-04 10:44:10"
+            },
+            {
+                "role": "user",
+                "content": "What is gestational diabetes?",
+                "sources": [],
+                "timestamp": "2026-06-04 10:47:24"
+            },
+            {
+                "role": "assistant",
+                "content": "Gestational diabetes is a form of diabetes that is first diagnosed during pregnancy. It occurs when hormonal changes and weight gain during pregnancy impair insulin function, leading to high blood sugar levels. Symptoms may not always develop but are similar to type 2 diabetes when present. Diagnosis is typically confirmed through blood glucose testing during the oral glucose tolerance test (OGTT). It resolves after pregnancy in most cases, but women who experience it have a 40-60% risk of developing type 2 diabetes within 5–10 years. Risk factors include family history of diabetes, being overweight before pregnancy, high-risk ethnic groups, prior gestational diabetes, and a history of delivering a baby over 9 pounds.",
+                "sources": [
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 3
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 142
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    }
+                ],
+                "timestamp": "2026-06-04 10:47:24"
+            },
+            {
+                "role": "user",
+                "content": "What are its symptoms?",
+                "sources": [],
+                "timestamp": "2026-06-04 10:48:29"
+            },
+            {
+                "role": "assistant",
+                "content": "Gestational diabetes may not always present symptoms, but when they occur, they are similar to those of type 2 diabetes. Potential symptoms include frequent urination, excessive thirst, increased hunger, unexplained weight loss, fatigue, nausea, and blurred vision. However, most individuals with gestational diabetes do not experience noticeable symptoms, which is why routine screening (e.g., oral glucose tolerance test) during pregnancy is critical for diagnosis.",
+                "sources": [
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 3
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 2
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 4
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 5
+                    },
+                    {
+                        "source": "DIABETES.pdf",
+                        "page": 1
+                    },
+                    {
+                        "source": "Medical_book-1-160.pdf",
+                        "page": 141
+                    }
+                ],
+                "timestamp": "2026-06-04 10:48:29"
             }
         ]
     }
