@@ -7,7 +7,8 @@ from routers.documents import router as documents_router
 from fastapi.staticfiles import StaticFiles
 from routers.summary import router as summary_router
 from routers.evaluation import router as evaluation_router
-
+from routers.auth import router as auth_router
+from routers.chat_sessions import router as chat_router
 
 # app = FastAPI(
 #     title="Medical Assistant API", description="API for AI Medical Assistant Chatbot"
@@ -40,3 +41,5 @@ app.include_router(ask_router)
 app.include_router(documents_router)
 app.include_router(summary_router)
 app.include_router(evaluation_router)
+app.include_router(auth_router)
+app.include_router(chat_router)

@@ -80,6 +80,15 @@ def render_chat():
                 "sources": sources
             })
 
+
+            if st.session_state.current_session_id is None:
+
+                from utils.chat_history import create_new_session
+
+                st.session_state.current_session_id = create_new_session(
+                    st.session_state.username
+                )
+            
             session_id = st.session_state.current_session_id
 
             add_message_to_session(session_id, "user", user_input)

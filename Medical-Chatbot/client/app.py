@@ -4,7 +4,8 @@ from components.upload import render_upload
 from components.ChatUI import render_chat
 from components.history_download import render_history_download
 from utils.api import get_documents
-from utils.auth import login_user, register_user
+# from utils.auth import login_user, register_user
+from utils.api import login_user_api, register_user_api
 from utils.chat_history import (
     load_sessions,
     create_new_session,
@@ -40,15 +41,16 @@ if not st.session_state.authenticated:
         login_password = st.text_input("Password", type="password", key="login_password")
 
         if st.button("Login"):
-            success, message = login_user(login_username, login_password)
+            response = login_user_api(login_username, login_password)
+            data = response.json()
 
-            if success:
+            if data.get("success"):
                 st.session_state.authenticated = True
                 st.session_state.username = login_username
-                st.success(message)
+                st.success(data.get("message"))
                 st.rerun()
             else:
-                st.error(message)
+                st.error(data.get("message"))
 
     with tab2:
         st.subheader("Register")
@@ -56,25 +58,26 @@ if not st.session_state.authenticated:
         reg_password = st.text_input("Choose Password", type="password", key="reg_password")
 
         if st.button("Register"):
-            success, message = register_user(reg_username, reg_password)
+            response = register_user_api(reg_username, reg_password)
+            data = response.json()
 
-            if success:
-                st.success(message)
+            if data.get("success"):
+                st.success(data.get("message"))
             else:
-                st.error(message)
+                st.error(data.get("message"))
 
     st.stop()
 
 # =========================
 # Session setup
 # =========================
-sessions = load_sessions()
+sessions = load_sessions(st.session_state.username)
 
 if "current_session_id" not in st.session_state:
     if sessions:
         st.session_state.current_session_id = sessions[-1]["id"]
     else:
-        st.session_state.current_session_id = create_new_session()
+        st.session_state.current_session_id = create_new_session(st.session_state.username)
 
 
 
@@ -131,15 +134,14 @@ if st.sidebar.button("🧹 Clear Saved History"):
     st.rerun()
 
 if st.sidebar.button("➕ New Chat"):
-    new_session_id = create_new_session()
-    st.session_state.current_session_id = new_session_id
+    st.session_state.current_session_id = None
     st.session_state.messages = []
     st.rerun()
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("## 🕘 Chat History")
 
-sessions = load_sessions()
+sessions = load_sessions(st.session_state.username)
 
 if sessions:
     for i, session in enumerate(reversed(sessions[-10:])):

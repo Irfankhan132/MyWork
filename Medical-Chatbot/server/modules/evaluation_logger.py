@@ -1,32 +1,64 @@
-import json
-from pathlib import Path
+from database import SessionLocal
+from models import EvaluationLog
 from datetime import datetime
 
-EVAL_FILE = Path("evaluation_logs.json")
+
+def save_evaluation_log(
+    username,
+    question,
+    response_time,
+    sources,
+    retrieved_chunks
+):
+    db = SessionLocal()
+
+    try:
+        log = EvaluationLog(
+            username=username,
+            question=question,
+            response_time_seconds=round(response_time, 2),
+            retrieved_chunks=retrieved_chunks,
+            sources=str(sources),
+            created_at=datetime.utcnow()
+        )
+
+        db.add(log)
+        db.commit()
+
+    finally:
+        db.close()
 
 
-def load_logs():
-    if EVAL_FILE.exists():
-        with open(EVAL_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return []
+def get_evaluation_logs(username=None):
 
+    db = SessionLocal()
 
-def save_evaluation_log(username, question, response_time, sources, retrieved_chunks):
-    logs = load_logs()
+    try:
 
-    logs.append({
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "username": username,
-        "question": question,
-        "response_time_seconds": round(response_time, 2),
-        "retrieved_chunks": retrieved_chunks,
-        "sources": sources
-    })
+        query = db.query(EvaluationLog)
 
-    with open(EVAL_FILE, "w", encoding="utf-8") as f:
-        json.dump(logs, f, indent=4, ensure_ascii=False)
+        if username:
+            query = query.filter(
+                EvaluationLog.username == username
+            )
 
+        logs = query.order_by(
+            EvaluationLog.created_at.desc()
+        ).all()
 
-def get_evaluation_logs():
-    return load_logs()
+        return [
+            {
+                "timestamp": log.created_at.strftime(
+                    "%Y-%m-%d %H:%M:%S"
+                ),
+                "username": log.username,
+                "question": log.question,
+                "response_time_seconds": log.response_time_seconds,
+                "retrieved_chunks": log.retrieved_chunks,
+                "sources": log.sources
+            }
+            for log in logs
+        ]
+
+    finally:
+        db.close()

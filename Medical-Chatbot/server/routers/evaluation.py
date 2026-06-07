@@ -6,12 +6,7 @@ router = APIRouter()
 
 @router.get("/evaluation/")
 async def get_evaluation_data(username: str = Query(...)):
-    logs = get_evaluation_logs()
-
-    user_logs = [
-        log for log in logs
-        if log.get("username") == username
-    ]
+    user_logs = get_evaluation_logs(username)
 
     total_queries = len(user_logs)
 

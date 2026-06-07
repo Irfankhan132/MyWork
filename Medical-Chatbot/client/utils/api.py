@@ -39,3 +39,23 @@ def get_evaluation_data(username):
         f"{API_URL}evaluation/",
         params={"username": username}
     )
+    
+    
+def register_user_api(username, password):
+    return requests.post(
+        f"{API_URL}register/",
+        json={
+            "username": username,
+            "password": password
+        }
+    )
+
+
+def login_user_api(username, password):
+    return requests.post(
+        f"{API_URL}login/",
+        json={
+            "username": username,
+            "password": password
+        }
+    )
