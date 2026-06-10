@@ -1,4 +1,5 @@
-from fastapi import APIRouter, Form
+from fastapi import APIRouter, Form, Depends, HTTPException
+from security import get_current_user
 from fastapi.responses import JSONResponse
 from modules.llm import get_llm_chain
 from modules.query_handlers import query_chain
@@ -29,10 +30,15 @@ def keyword_score(text: str, query: str) -> int:
 @router.post("/ask/")
 async def ask_question(
     question:str=Form(...),
-    username:str=Form(...),
-    chat_history:str=Form("")
+    chat_history:str=Form(""),
+    username: str = Depends(get_current_user)
     ):
     try:
+        if not username:
+            raise HTTPException(
+                status_code=401,
+                detail="Invalid token"
+            )
         logger.info(f"User query:{question}")
         start_time = time.time()
         

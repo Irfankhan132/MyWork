@@ -1,9 +1,10 @@
-from fastapi import APIRouter, Form
 from fastapi.responses import JSONResponse
 from pathlib import Path
 from langchain_community.document_loaders import PyPDFLoader
 from modules.llm import generate_document_summary
 from logger import logger
+from fastapi import APIRouter, Form, Depends, HTTPException
+from security import get_current_user
 
 from modules.llm import (
     generate_document_summary,
@@ -17,8 +18,8 @@ UPLOAD_DIR = Path("./uploaded_docs")
 
 @router.post("/summary/")
 async def summarize_document(
-    username: str = Form(...),
-    filename: str = Form(...)
+    filename: str = Form(...),
+    username: str = Depends(get_current_user)
 ):
     try:
         file_path = UPLOAD_DIR / username / filename

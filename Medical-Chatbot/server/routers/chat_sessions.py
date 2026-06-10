@@ -3,14 +3,13 @@ from pydantic import BaseModel
 from database import SessionLocal
 from models import User, ChatSession, ChatMessage
 from datetime import datetime
+from fastapi import HTTPException, Depends
+from security import get_current_user
 import uuid
 import json
 
 router = APIRouter()
 
-
-class SessionCreate(BaseModel):
-    username: str
 
 
 class MessageCreate(BaseModel):
@@ -21,14 +20,16 @@ class MessageCreate(BaseModel):
 
 
 @router.post("/sessions/create/")
-def create_session(data: SessionCreate):
+def create_session(
+    username: str = Depends(get_current_user)
+):
 
     db = SessionLocal()
 
     try:
         user = (
             db.query(User)
-            .filter(User.username == data.username)
+            .filter(User.username == username)
             .first()
         )
 
@@ -54,8 +55,10 @@ def create_session(data: SessionCreate):
         db.close()
         
         
-@router.get("/sessions/{username}")
-def get_sessions(username: str):
+@router.get("/sessions/")
+def get_sessions(
+    username: str = Depends(get_current_user)
+):
 
     db = SessionLocal()
 
@@ -135,6 +138,33 @@ def add_message(data: MessageCreate):
         db.commit()
 
         return {"success": True}
+
+    finally:
+        db.close()
+        
+        
+@router.delete("/sessions/clear/")
+def clear_sessions(username: str = Depends(get_current_user)):
+
+    if not username:
+        raise HTTPException(status_code=401, detail="Invalid token")
+
+    db = SessionLocal()
+
+    try:
+        user = db.query(User).filter(User.username == username).first()
+
+        if not user:
+            return {"success": False}
+
+        sessions = db.query(ChatSession).filter(ChatSession.user_id == user.id).all()
+
+        for session in sessions:
+            db.delete(session)
+
+        db.commit()
+
+        return {"success": True, "message": "Chat history cleared."}
 
     finally:
         db.close()

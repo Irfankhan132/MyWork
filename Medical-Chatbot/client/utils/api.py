@@ -1,43 +1,73 @@
 import requests
 from config import API_URL
+import streamlit as st
 
-def upload_pdfs_api(files, username):
-    files_payload = [("files", (f.name, f.read(), "application/pdf")) for f in files]
-    data = {"username": username}
-    return requests.post(f"{API_URL}upload_pdfs/", files=files_payload, data=data)
+def get_auth_headers():
+    token = st.session_state.get("token", "")
 
-def ask_question(question, chat_history="", username=""):
+    if not token:
+        return {}
+
+    return {
+        "Authorization": f"Bearer {token}"
+    }
+
+def upload_pdfs_api(files):
+    files_payload = []
+
+    for f in files:
+        f.seek(0)
+        file_bytes = f.getvalue()
+
+        files_payload.append(
+            ("files", (f.name, file_bytes, "application/pdf"))
+        )
+
+    return requests.post(
+        f"{API_URL}upload_pdfs/",
+        files=files_payload,
+        headers=get_auth_headers()
+    )
+
+def ask_question(question, chat_history=""):
     return requests.post(
         f"{API_URL}ask/",
         data={
             "question": question,
             "chat_history": chat_history,
-            "username": username
-        }
+    
+        },
+        headers=get_auth_headers()
     )
     
 
 
-def get_documents(username):
-    return requests.get(f"{API_URL}documents/", params={"username": username})
+def get_documents():
+    return requests.get(
+        f"{API_URL}documents/",
+        headers=get_auth_headers()
+    )
 
-def delete_document(filename, username):
-    return requests.delete(f"{API_URL}documents/{filename}", params={"username": username})
+def delete_document(filename):
+    return requests.delete(
+        f"{API_URL}documents/{filename}",
+        headers=get_auth_headers()
+    )
 
 
-def summarize_document(username, filename):
+def summarize_document(filename):
     return requests.post(
         f"{API_URL}summary/",
         data={
-            "username": username,
             "filename": filename
-        }
+        },
+        headers=get_auth_headers()
     )
     
-def get_evaluation_data(username):
+def get_evaluation_data():
     return requests.get(
         f"{API_URL}evaluation/",
-        params={"username": username}
+        headers=get_auth_headers()
     )
     
     

@@ -10,6 +10,7 @@ from routers.evaluation import router as evaluation_router
 from routers.auth import router as auth_router
 from routers.chat_sessions import router as chat_router
 
+
 # app = FastAPI(
 #     title="Medical Assistant API", description="API for AI Medical Assistant Chatbot"
 # )

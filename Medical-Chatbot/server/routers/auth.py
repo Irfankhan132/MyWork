@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from database import SessionLocal
 from models import User
 import bcrypt
+from security import create_access_token
 
 router = APIRouter()
 
@@ -19,14 +20,14 @@ class UserLogin(BaseModel):
 
 
 @router.post("/register/")
-def register(user: UserRegister):
+def register(db_user: UserRegister):
 
     db: Session = SessionLocal()
 
     try:
         existing_user = (
             db.query(User)
-            .filter(User.username == user.username)
+            .filter(User.username == db_user.username)
             .first()
         )
 
@@ -38,23 +39,30 @@ def register(user: UserRegister):
 
         hashed_password = (
             bcrypt.hashpw(
-                user.password.encode(),
+                db_user.password.encode(),
                 bcrypt.gensalt()
             )
             .decode()
         )
 
         new_user = User(
-            username=user.username,
+            username=db_user.username,
             password=hashed_password
         )
 
         db.add(new_user)
         db.commit()
 
+        access_token = create_access_token(
+            data={"sub": db_user.username}
+        )
+        
         return {
             "success": True,
-            "message": "Registration successful."
+            "message": "Registration successful.",
+            "access_token": access_token,
+            "token_type": "bearer",
+            "username": db_user.username
         }
 
     finally:
@@ -62,14 +70,14 @@ def register(user: UserRegister):
 
 
 @router.post("/login/")
-def login(user: UserLogin):
+def login(user_input: UserLogin):
 
     db: Session = SessionLocal()
 
     try:
         db_user = (
             db.query(User)
-            .filter(User.username == user.username)
+            .filter(User.username == user_input.username)
             .first()
         )
 
@@ -80,12 +88,19 @@ def login(user: UserLogin):
             }
 
         if bcrypt.checkpw(
-            user.password.encode(),
+            user_input.password.encode(),
             db_user.password.encode()
         ):
+            access_token = create_access_token(
+                data={"sub": db_user.username}
+            )
+
             return {
                 "success": True,
-                "message": "Login successful."
+                "message": "Login successful.",
+                "access_token": access_token,
+                "token_type": "bearer",
+                "username": db_user.username
             }
 
         return {

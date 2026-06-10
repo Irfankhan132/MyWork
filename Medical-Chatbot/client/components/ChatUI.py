@@ -10,7 +10,9 @@ def show_sources(sources):
         st.markdown("### 📄 Sources")
 
         displayed = set()
+        
         username = st.session_state.get("username", "guest")
+        
 
         for src in sources:
             source_path = src.get("source", "")
@@ -18,6 +20,7 @@ def show_sources(sources):
 
             file_name = Path(source_path).name
             citation_text = f"{file_name} - Page {page}"
+            
 
             if citation_text not in displayed:
                 
@@ -39,7 +42,12 @@ def render_chat():
         if msg["role"] == "assistant":
             show_sources(msg.get("sources", []))
 
+    auto_question = st.session_state.pop("auto_question", None)
+
     user_input = st.chat_input("Type your question here...")
+
+    if auto_question:
+        user_input = auto_question
 
     if user_input:
         st.chat_message("user").markdown(user_input)
@@ -55,8 +63,7 @@ def render_chat():
                 content = msg["content"]
                 chat_history_text += f"{role}: {content}\n"
             
-            username = st.session_state.get("username", "guest")
-            response = ask_question(user_input, chat_history_text, username)
+            response = ask_question(user_input, chat_history_text)
 
         if response.status_code == 200:
             data = response.json()
@@ -84,15 +91,15 @@ def render_chat():
             if st.session_state.current_session_id is None:
 
                 from utils.chat_history import create_new_session
-
-                st.session_state.current_session_id = create_new_session(
-                    st.session_state.username
-                )
+                st.session_state.current_session_id = create_new_session()
             
             session_id = st.session_state.current_session_id
 
             add_message_to_session(session_id, "user", user_input)
             add_message_to_session(session_id, "assistant", answer, sources)
+            
+            if auto_question:
+                st.rerun()
 
         else:
             st.error("Error getting response from server.")

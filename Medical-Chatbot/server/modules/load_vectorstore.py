@@ -39,9 +39,26 @@ if PINECONE_INDEX_NAME not in existing_indexes:
 
 index=pc.Index(PINECONE_INDEX_NAME)
 
+def delete_existing_vectors(username, filename):
+    prefix = f"{username}-{Path(filename).stem}"
+
+    vector_ids = []
+
+    response = index.list(prefix=prefix)
+
+    for ids in response:
+        for item in ids:
+            vector_ids.append(
+                item.id if hasattr(item, "id") else str(item)
+            )
+
+    if vector_ids:
+        index.delete(ids=vector_ids)
+        print(f"Deleted {len(vector_ids)} old vectors for {filename}")
+
 # load,split,embed and upsert pdf docs content
 
-def load_vectorstore(uploaded_files, username):
+async def load_vectorstore(uploaded_files, username):
     embed_model = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
@@ -53,9 +70,22 @@ def load_vectorstore(uploaded_files, username):
     for file in uploaded_files:
         # save_path = Path(UPLOAD_DIR) / file.filename
         save_path = user_upload_dir / file.filename
+        
+        if save_path.exists():
+            delete_existing_vectors(username, file.filename)
+            save_path.unlink()
+        
+        
+        content = await file.read()
+
+        
+        if len(content) == 0:
+            raise ValueError(f"File {file.filename} is empty. Please upload a valid PDF file.")
+
         with open(save_path, "wb") as f:
-            f.write(file.file.read())
+            f.write(content)
         file_paths.append(str(save_path))
+        
 
     for file_path in file_paths:
         loader = PyPDFLoader(file_path)

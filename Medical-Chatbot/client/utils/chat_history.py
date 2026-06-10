@@ -1,12 +1,15 @@
 import requests
 from config import API_URL
+from utils.api import get_auth_headers
+from config import API_URL
+import requests
 
 
-def load_sessions(username=None):
-    if not username:
-        return []
-
-    response = requests.get(f"{API_URL}sessions/{username}")
+def load_sessions():
+    response = requests.get(
+        f"{API_URL}sessions/",
+        headers=get_auth_headers()
+    )
 
     if response.status_code == 200:
         return response.json()
@@ -14,13 +17,12 @@ def load_sessions(username=None):
     return []
 
 
-def create_new_session(username=None):
-    if not username:
-        return None
+def create_new_session():
+    
 
     response = requests.post(
         f"{API_URL}sessions/create/",
-        json={"username": username}
+        headers=get_auth_headers()
     )
 
     if response.status_code == 200:
@@ -49,6 +51,11 @@ def add_message_to_session(session_id, role, content, sources=None):
     return response.status_code == 200
 
 
-def clear_all_sessions(username=None):
-    # We will implement delete/clear sessions later
-    return True
+
+def clear_all_sessions():
+    response = requests.delete(
+        f"{API_URL}sessions/clear/",
+        headers=get_auth_headers()
+    )
+
+    return response.status_code == 200

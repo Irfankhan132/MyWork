@@ -9,13 +9,17 @@ def render_upload():
         accept_multiple_files=True
     )
 
-    username = st.session_state.get("username", "guest")
-
+    response = upload_pdfs_api(
+        uploaded_files
+    )
     if st.sidebar.button("Upload DB") and uploaded_files:
-        response = upload_pdfs_api(uploaded_files, username)
+        response = upload_pdfs_api(uploaded_files)
 
         if response.status_code == 200:
             st.sidebar.success("Files uploaded successfully!")
+            st.session_state.pop("document_summary", None)
+            st.session_state.pop("summary_filename", None)
+            st.session_state.pop("suggested_questions", None)
             st.rerun()
         else:
             st.sidebar.error(f"Error uploading files to server: {response.text}")
@@ -24,7 +28,7 @@ def render_upload():
     st.sidebar.markdown("## 🧾 Document Summary")
 
     try:
-        docs_response = get_documents(username)
+        docs_response = get_documents()
 
         if docs_response.status_code == 200:
             documents = docs_response.json().get("documents", [])
@@ -37,7 +41,7 @@ def render_upload():
 
                 if st.sidebar.button("Generate Summary"):
                     with st.spinner("Generating document summary..."):
-                        summary_response = summarize_document(username, selected_doc)
+                        summary_response = summarize_document(selected_doc)
 
                     if summary_response.status_code == 200:
 

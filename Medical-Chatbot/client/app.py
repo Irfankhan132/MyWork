@@ -1,5 +1,7 @@
+from fileinput import filename
 import json
 import streamlit as st
+from utils.api import delete_document
 from components.upload import render_upload
 from components.ChatUI import render_chat
 from components.history_download import render_history_download
@@ -24,6 +26,7 @@ st.set_page_config(
 # =========================
 # Authentication
 # =========================
+
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 
@@ -46,11 +49,15 @@ if not st.session_state.authenticated:
 
             if data.get("success"):
                 st.session_state.authenticated = True
-                st.session_state.username = login_username
+                st.session_state.username = data.get("username")
+                st.session_state.token = data.get("access_token")
                 st.success(data.get("message"))
                 st.rerun()
+                
             else:
                 st.error(data.get("message"))
+                
+            
 
     with tab2:
         st.subheader("Register")
@@ -71,13 +78,21 @@ if not st.session_state.authenticated:
 # =========================
 # Session setup
 # =========================
-sessions = load_sessions(st.session_state.username)
+
+if "token" not in st.session_state:
+    st.session_state.token = ""
+    
+    
+# st.sidebar.write("Token saved:", bool(st.session_state.token))
+# st.sidebar.write("Token preview:", st.session_state.token[:20] + "...")
+    
+sessions = load_sessions()
 
 if "current_session_id" not in st.session_state:
     if sessions:
         st.session_state.current_session_id = sessions[-1]["id"]
     else:
-        st.session_state.current_session_id = create_new_session(st.session_state.username)
+        st.session_state.current_session_id = create_new_session()
 
 
 
@@ -90,7 +105,9 @@ st.sidebar.caption(f"Logged in as: {st.session_state.username}")
 if st.sidebar.button("🚪 Logout"):
     st.session_state.authenticated = False
     st.session_state.username = ""
+    st.session_state.token = ""
     st.session_state.messages = []
+    st.session_state.current_session_id = None
     st.rerun()
 
 if st.sidebar.button("📊 Evaluation Dashboard"):
@@ -100,7 +117,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("## 📄 Uploaded Documents")
 
 try:
-    response = get_documents(st.session_state.username)
+    response = get_documents()
 
     if response.status_code == 200:
         documents = response.json().get("documents", [])
@@ -114,8 +131,11 @@ try:
 
                 with col2:
                     if st.button("🗑", key=f"delete_{doc}"):
-                        from utils.api import delete_document
-                        delete_document(doc, st.session_state.username)
+                        
+                        delete_document(doc)
+                        st.session_state.pop("document_summary", None)
+                        st.session_state.pop("summary_filename", None)
+                        st.session_state.pop("suggested_questions", None)
                         st.rerun()
         else:
             st.sidebar.info("No documents uploaded yet.")
@@ -131,6 +151,7 @@ st.sidebar.markdown("## ⚙️ Options")
 if st.sidebar.button("🧹 Clear Saved History"):
     clear_all_sessions()
     st.session_state.messages = []
+    st.session_state.current_session_id = None
     st.rerun()
 
 if st.sidebar.button("➕ New Chat"):
@@ -141,7 +162,7 @@ if st.sidebar.button("➕ New Chat"):
 st.sidebar.markdown("---")
 st.sidebar.markdown("## 🕘 Chat History")
 
-sessions = load_sessions(st.session_state.username)
+sessions = load_sessions()
 
 if sessions:
     for i, session in enumerate(reversed(sessions[-10:])):
@@ -170,7 +191,7 @@ st.title("🩺 Medical Assistant :Chatbot:")
 if st.session_state.get("show_evaluation", False):
     st.markdown("## 📊 Evaluation Dashboard")
 
-    response = get_evaluation_data(st.session_state.username)
+    response = get_evaluation_data()
 
     if response.status_code == 200:
         data = response.json()
