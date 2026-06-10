@@ -484,7 +484,8 @@ http://localhost:8501
 
 **Irfan Ullah Khan**
 
-MSc Computer Engineering
+MSc Computer Engineering (University of Padua, Italy)
+BSc Software Engineering (Comsats University Islamabad, Pakistan)
 
 Interests:
 
@@ -494,6 +495,8 @@ Interests:
 * Machine Learning
 * Data Engineering
 * Software Development
+* Java Development
+* Database Engineering
 
 GitHub:
 https://github.com/Irfankhan132/MyWork
