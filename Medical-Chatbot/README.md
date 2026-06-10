@@ -484,8 +484,12 @@ http://localhost:8501
 
 **Irfan Ullah Khan**
 
-MSc Computer Engineering (University of Padua, Italy)
-BSc Software Engineering (Comsats University Islamabad, Pakistan)
+Education:
+
+* MSc Computer Engineering (University of Padua, Italy)
+* BSc Software Engineering (Comsats University Islamabad, Pakistan)
+
+
 
 Interests:
 
