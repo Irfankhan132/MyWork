@@ -2,7 +2,7 @@
 
 An AI-powered Medical Document Assistant built with **FastAPI**, **Streamlit**, **LangChain**, **Pinecone**, **HuggingFace Embeddings**, **Groq LLMs**, **PostgreSQL**, and **JWT Authentication**.
 
-The application allows users to upload medical PDF documents and interact with them using natural language. It uses Retrieval-Augmented Generation (RAG), semantic search, hybrid retrieval, reranking, and source-grounded responses to answer questions based on uploaded medical documents.
+The application allows users to upload medical PDF documents or any pdf docs and interact with them using natural language. It uses Retrieval-Augmented Generation (RAG), semantic search, hybrid retrieval, reranking, and source-grounded responses to answer questions based on uploaded medical documents.
 
 ---
 
