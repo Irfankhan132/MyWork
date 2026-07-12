@@ -1,0 +1,1 @@
+export { appointmentAPI } from './appointmentAPI';
