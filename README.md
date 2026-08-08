@@ -65,11 +65,11 @@ It demonstrates my experience developing modern frontend/full-stack applications
 
 ## 🛠️ Technical Skills
 
-**Languages:** Java, Python, JavaScript, TypeScript, PHP, C++, C#  
-**Web & Frameworks:** React, Vue.js, Nuxt, FastAPI, Spring Boot, Django, Flask, Node.js  
-**Databases:** PostgreSQL, MySQL, MongoDB, Neo4j, GraphDB, Pinecone  
-**AI & Data:** LangChain, RAG, Knowledge Graphs, HuggingFace, TensorFlow/Keras, SPARQL  
-**Tools & DevOps:** Git, Docker, Linux, CI/CD, AWS
+**Languages:** Java, Python, JavaScript, TypeScript, PHP, SQL  
+**Web & Frameworks:** React.js, Vite, Express.js, Vue.js, Nuxt, FastAPI, Spring Boot, Django, Flask, Node.js, Streamlit, RESTFull APIs, WebSockets, Laravel, WordPress
+**Databases and Engineering:** PostgreSQL, MySQL, MongoDB, Neo4j, GraphDB, Pinecone DB, Oracal DB, RDBMS, Queries, Data Integration, Data Analysis
+**AI & Data:** LangChain, RAG, Knowledge Graphs, HuggingFace, TensorFlow/Keras, SPARQL Queries, Pandas, PyTorch, Prompt Engineering, AI-Assisted Development
+**Tools & DevOps:** Git, Docker, Linux Operating System, CI/CD Pipelines, Jenkins, Eclipse, IntelliJ, NetBeans, GraphDB, Wikidata Server, Protege, VS Code, Jupyter Notebook, ETL, ELT, Jira, Slack, AWS (Basics)
 
 ---
 
